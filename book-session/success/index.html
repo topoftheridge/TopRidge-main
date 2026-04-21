@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TopRidge — Book Your Call</title>
+  <meta name="description" content="Payment confirmed. Pick a time for your strategy session.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .success-section {
+      padding: 120px 0 80px;
+      min-height: 100vh;
+    }
+    .success-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .success-header {
+      margin-bottom: 40px;
+    }
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .success-icon svg {
+      color: #22c55e;
+    }
+    .success-header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .success-header p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .calendly-container {
+      margin-top: 20px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="/" class="nav-logo"><img src="../../logo.png" alt="TopRidge" class="logo-img"></a>
+      <div class="nav-links" id="navLinks">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a>
+          <div class="nav-dropdown-menu">
+            <a href="/growth">Growth</a>
+            <a href="/conversion">Conversion</a>
+            <a href="/operations">Operations</a>
+            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/press">Press</a>
+          </div>
+        </div>
+        <a href="/press">Press</a>
+        <a href="/#process">Process</a>
+        <a href="/#contact" class="btn btn-sm">Start a Conversation</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="success-section">
+    <div class="container">
+      <div class="success-wrapper">
+        <div class="success-header">
+          <div class="success-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12l5 5L20 7"/>
+            </svg>
+          </div>
+          <h1>Payment confirmed. Pick a time.</h1>
+          <p>You're all set — just choose a time below that works for you and we'll see you there.</p>
+        </div>
+        <div class="calendly-container">
+          <!-- Calendly inline widget begin -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com/topridge/topridge-strategy-call-1hr?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Calendly inline widget end -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="/" class="nav-logo"><img src="../../logo.png" alt="TopRidge" height="24"></a>
+        <p class="footer-tagline">Revenue systems that scale.</p>
+      </div>
+      <div class="footer-right">
+        <p>&copy; 2026 TopRidge Marketing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../../main.js"></script>
+</body>
+</html>

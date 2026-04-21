@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TopRidge — Book a Strategy Session</title>
+  <meta name="description" content="Book your strategy session with TopRidge. Fill out a few details so we can make the most of our time together.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .book-form-section {
+      padding: 120px 0 80px;
+      min-height: 100vh;
+    }
+    .book-form-wrapper {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .book-form-header {
+      margin-bottom: 40px;
+    }
+    .book-form-header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .book-form-header p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .form-group label .required {
+      color: #dc2626;
+      margin-left: 2px;
+    }
+    .form-group label .optional {
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+    .revenue-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 480px) {
+      .revenue-options {
+        grid-template-columns: 1fr;
+      }
+    }
+    .revenue-option {
+      position: relative;
+    }
+    .revenue-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .revenue-option label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 450;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .revenue-option input[type="radio"]:checked + label {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-weight: 500;
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+    .revenue-option label:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-secondary);
+    }
+    .form-submit-btn {
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px 28px;
+      font-size: 1rem;
+    }
+    .form-error {
+      color: #dc2626;
+      font-size: 0.85rem;
+      margin-top: 6px;
+      display: none;
+    }
+    .form-group.error input,
+    .form-group.error textarea,
+    .form-group.error select {
+      border-color: #dc2626;
+    }
+    .form-group.error .form-error {
+      display: block;
+    }
+    .form-price-note {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="/" class="nav-logo"><img src="../logo.png" alt="TopRidge" class="logo-img"></a>
+      <div class="nav-links" id="navLinks">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a>
+          <div class="nav-dropdown-menu">
+            <a href="/growth">Growth</a>
+            <a href="/conversion">Conversion</a>
+            <a href="/operations">Operations</a>
+            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/press">Press</a>
+          </div>
+        </div>
+        <a href="/press">Press</a>
+        <a href="/#process">Process</a>
+        <a href="/#contact" class="btn btn-sm">Start a Conversation</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="book-form-section">
+    <div class="container">
+      <div class="book-form-wrapper">
+        <div class="book-form-header">
+          <h1>A few details before we get started.</h1>
+          <p>Fill this out so we can make the most of our time together. After submitting, you'll be taken to a secure payment page.</p>
+        </div>
+
+        <form id="bookingForm" action="javascript:void(0);" onsubmit="return false;">
+          <div class="form-group">
+            <label for="name">Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Your full name">
+            <div class="form-error">Please enter your name.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+            <div class="form-error">Please enter a valid email address.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            <div class="form-error">Please enter a valid 10-digit phone number.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="type">Business or Individual? <span class="required">*</span></label>
+            <select id="type" name="type">
+              <option value="" disabled selected>Select one</option>
+              <option value="business">Business</option>
+              <option value="individual">Individual</option>
+            </select>
+            <div class="form-error">Please select an option.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="working_on">What are you working on? <span class="required">*</span></label>
+            <textarea id="working_on" name="working_on" placeholder="Tell us about your project, business, or idea..."></textarea>
+            <div class="form-error">Please tell us what you're working on.</div>
+          </div>
+
+          <div class="form-group">
+            <label>Current monthly revenue or stage <span class="required">*</span></label>
+            <div class="revenue-options">
+              <div class="revenue-option">
+                <input type="radio" id="rev1" name="revenue" value="$0 - $1,000">
+                <label for="rev1">$0 – $1,000</label>
+              </div>
+              <div class="revenue-option">
+                <input type="radio" id="rev2" name="revenue" value="$1,000 - $5,000">
+                <label for="rev2">$1,000 – $5,000</label>
+              </div>
+              <div class="revenue-option">
+                <input type="radio" id="rev3" name="revenue" value="$5,000 - $10,000">
+                <label for="rev3">$5,000 – $10,000</label>
+              </div>
+              <div class="revenue-option">
+                <input type="radio" id="rev4" name="revenue" value="$10,000 - $25,000">
+                <label for="rev4">$10,000 – $25,000</label>
+              </div>
+              <div class="revenue-option">
+                <input type="radio" id="rev5" name="revenue" value="$25,000 - $50,000">
+                <label for="rev5">$25,000 – $50,000</label>
+              </div>
+              <div class="revenue-option">
+                <input type="radio" id="rev6" name="revenue" value="$50,000 - $100,000+">
+                <label for="rev6">$50,000 – $100,000+</label>
+              </div>
+              <div class="revenue-option">
+                <input type="radio" id="rev7" name="revenue" value="Pre-revenue / Idea stage">
+                <label for="rev7">Pre-revenue / Idea stage</label>
+              </div>
+              <div class="revenue-option">
+                <input type="radio" id="rev8" name="revenue" value="Rather not say">
+                <label for="rev8">Rather not say</label>
+              </div>
+            </div>
+            <div class="form-error">Please select your current revenue range.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="main_problem">Main problem you want help with <span class="required">*</span></label>
+            <textarea id="main_problem" name="main_problem" placeholder="What's the #1 thing you'd like to solve or figure out?"></textarea>
+            <div class="form-error">Please describe your main problem.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="website">Website or social link <span class="optional">(optional)</span></label>
+            <input type="url" id="website" name="website" placeholder="https://yoursite.com or social profile link">
+          </div>
+
+          <div class="form-group">
+            <label for="anything_else">Anything specific you want to cover? <span class="required">*</span></label>
+            <textarea id="anything_else" name="anything_else" placeholder="Topics, questions, specific areas of your business..."></textarea>
+            <div class="form-error">Please let us know what you'd like to cover.</div>
+          </div>
+
+          <button type="button" id="submitBtn" class="btn btn-primary form-submit-btn">Continue to Payment →</button>
+          <p class="form-price-note">You'll be redirected to a secure Stripe checkout page.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="/" class="nav-logo"><img src="../logo.png" alt="TopRidge" height="24"></a>
+        <p class="footer-tagline">Revenue systems that scale.</p>
+      </div>
+      <div class="footer-right">
+        <p>&copy; 2026 TopRidge Marketing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../main.js"></script>
+  <script>
+    (function() {
+      var STRIPE_URL = 'https://buy.stripe.com/28EdR1cuK14r8v2eXb1oI00';
+      var btn = document.getElementById('submitBtn');
+      var form = document.getElementById('bookingForm');
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Clear previous errors
+        var groups = form.querySelectorAll('.form-group');
+        for (var i = 0; i < groups.length; i++) {
+          groups[i].classList.remove('error');
+        }
+
+        var valid = true;
+
+        // Check text/email/tel/select fields
+        var requiredFields = ['name', 'email', 'phone', 'type', 'working_on', 'main_problem', 'anything_else'];
+        for (var i = 0; i < requiredFields.length; i++) {
+          var el = document.getElementById(requiredFields[i]);
+          if (!el.value.trim()) {
+            el.closest('.form-group').classList.add('error');
+            valid = false;
+          }
+        }
+
+        // Validate email format
+        var emailVal = document.getElementById('email').value.trim();
+        if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+          document.getElementById('email').closest('.form-group').classList.add('error');
+          valid = false;
+        }
+
+        // Validate phone (10 digits minimum)
+        var phoneVal = document.getElementById('phone').value.trim().replace(/\D/g, '');
+        if (phoneVal.length < 10) {
+          document.getElementById('phone').closest('.form-group').classList.add('error');
+          valid = false;
+        }
+
+        // Validate revenue
+        var revenueChecked = document.querySelector('input[name="revenue"]:checked');
+        if (!revenueChecked) {
+          document.querySelector('.revenue-options').closest('.form-group').classList.add('error');
+          valid = false;
+        }
+
+        if (!valid) {
+          var firstErr = form.querySelector('.form-group.error');
+          if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        // Collect form data matching webhook schema
+        var formData = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          businessType: document.getElementById('type').value,
+          workingOn: document.getElementById('working_on').value.trim(),
+          revenueStage: revenueChecked.value,
+          mainProblem: document.getElementById('main_problem').value.trim(),
+          website: document.getElementById('website').value.trim(),
+          specificTopics: document.getElementById('anything_else').value.trim(),
+          source: 'TopRidge Strategy Session Form'
+        };
+
+        // Store in localStorage
+        try { localStorage.setItem('topridge_booking', JSON.stringify(formData)); } catch(ex) {}
+
+        // Send to Google Sheets webhook, then redirect to Stripe
+        btn.textContent = 'Submitting...';
+        btn.disabled = true;
+
+        var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxVTGGJgMrmf8cj3yCkNT21JeFB9kQjnfD7VAmkAdUTWMuDedx3fHBZU1yw8RonmpgqkA/exec';
+
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          body: JSON.stringify(formData)
+        }).then(function(res) { return res.json(); })
+        .then(function(result) {
+          btn.textContent = 'Redirecting to payment...';
+          window.location.href = STRIPE_URL;
+        }).catch(function(err) {
+          // Even if parse fails, data likely went through — redirect anyway
+          console.warn('Webhook response issue:', err);
+          btn.textContent = 'Redirecting to payment...';
+          window.location.href = STRIPE_URL;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

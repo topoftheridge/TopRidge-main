@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TopRidge — Operations</title>
+  <meta name="description" content="Workflow automation, CRM, tracking, dashboards, follow-up systems, and lead routing — the backend infrastructure that keeps everything running.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="/" class="nav-logo"><img src="../logo.png" alt="TopRidge" class="logo-img"></a>
+      <div class="nav-links" id="navLinks">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a>
+          <div class="nav-dropdown-menu">
+            <a href="/growth">Growth</a>
+            <a href="/conversion">Conversion</a>
+            <a href="/operations">Operations</a>
+            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/press">Press</a>
+          </div>
+        </div>
+        <a href="/press">Press</a>
+        <a href="/#process">Process</a>
+        <a href="/#contact" class="btn btn-sm">Start a Conversation</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta">
+    <div class="container">
+      <a href="/book-call" class="btn btn-primary">Book a Strategy Call</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero service-hero">
+    <div class="hero-bg"><div class="grid-overlay"></div></div>
+    <div class="container hero-content">
+      <span class="section-tag">Operations</span>
+      <h1>We build and manage everything behind the scenes so nothing breaks as you scale.</h1>
+      <p class="hero-sub">From tracking and automation to follow-up and routing, everything is connected and built to run reliably.</p>
+      <div class="hero-actions">
+        <a href="/book-call" class="btn btn-primary">Book a Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Build -->
+  <section class="section" id="what-we-build">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Build</span>
+        <h2>The systems that keep everything running.</h2>
+        <p class="section-desc">Growth creates demand. Conversion captures it. Operations makes sure nothing falls through the cracks — leads get followed up, data gets tracked, and everything stays connected as you scale.</p>
+      </div>
+      <div class="systems-grid">
+        <div class="system-card">
+          <h3>Workflow Automation</h3>
+          <p>Manual tasks slow you down and introduce errors. We build automations that handle the repetitive work — triggering actions, moving data between tools, and keeping processes running without anyone needing to babysit them.</p>
+          <ul class="system-details">
+            <li>Automated task triggers and sequences</li>
+            <li>Cross-platform workflow connections</li>
+            <li>Notification and alert systems</li>
+            <li>Process documentation and failsafe logic</li>
+          </ul>
+        </div>
+        <div class="system-card">
+          <h3>Performance Dashboards</h3>
+          <p>You shouldn't have to dig through five tools to know how things are going. We build dashboards that pull everything into one place — ad performance, lead flow, conversion rates, revenue — so you can make decisions in minutes, not hours.</p>
+          <ul class="system-details">
+            <li>Real-time KPI dashboards</li>
+            <li>Multi-source data aggregation</li>
+            <li>Custom reporting for your specific metrics</li>
+            <li>Scheduled reports and automated snapshots</li>
+          </ul>
+        </div>
+        <div class="system-card">
+          <h3>CRM Setup & API Integrations</h3>
+          <p>Your CRM should be the single source of truth for every lead and customer interaction. We set it up properly, connect it to every tool in your stack, and make sure data flows cleanly so nothing gets lost between systems.</p>
+          <ul class="system-details">
+            <li>CRM configuration and pipeline setup</li>
+            <li>Third-party API integrations</li>
+            <li>Data syncing across platforms</li>
+            <li>Custom fields, tags, and segmentation</li>
+          </ul>
+        </div>
+        <div class="system-card">
+          <h3>Tracking Setup — Pixels & Events</h3>
+          <p>If you can't track it, you can't improve it. We implement the full tracking layer — pixels, conversion events, UTM structures, and server-side tracking — so every click, form fill, and purchase is accounted for.</p>
+          <ul class="system-details">
+            <li>Meta and Google pixel installation</li>
+            <li>Custom conversion event configuration</li>
+            <li>Server-side tracking and CAPI setup</li>
+            <li>UTM strategy and attribution structure</li>
+          </ul>
+        </div>
+        <div class="system-card">
+          <h3>Automated Follow-Up</h3>
+          <p>Speed matters. When a lead comes in, the follow-up should happen immediately — not whenever someone gets around to it. We build email, SMS, and notification sequences that engage leads the moment they raise their hand.</p>
+          <ul class="system-details">
+            <li>Instant lead response sequences</li>
+            <li>Email and SMS drip campaigns</li>
+            <li>Re-engagement sequences for cold leads</li>
+            <li>Follow-up timing and cadence optimization</li>
+          </ul>
+        </div>
+        <div class="system-card">
+          <h3>Lead Routing</h3>
+          <p>The right lead needs to get to the right person at the right time. We build routing logic that assigns leads based on location, service type, availability, or any criteria that matters to your business.</p>
+          <ul class="system-details">
+            <li>Rule-based lead assignment</li>
+            <li>Round-robin and weighted distribution</li>
+            <li>Location and service-based routing</li>
+            <li>Instant notifications to assigned team members</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section-dark" id="operations-process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Process</span>
+        <h2>How operations are built.</h2>
+        <p class="section-desc">Strong operations aren't manual. They're designed as systems — connecting your tools, automating key processes, and ensuring everything runs consistently as you scale.</p>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="process-marker">
+            <div class="process-line"></div>
+          </div>
+          <div class="process-content">
+            <h3>Map & Audit</h3>
+            <p>We document your current tools, workflows, and data flow to understand how traffic, leads, and customers move through your business, where manual work exists, and where processes are breaking.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-marker">
+            <div class="process-line"></div>
+          </div>
+          <div class="process-content">
+            <h3>Build & Connect</h3>
+            <p>We set up the CRM, wire the integrations, install tracking, build the automations, and configure the dashboards. Everything gets connected into one cohesive system.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-marker">
+            <div class="process-line"></div>
+          </div>
+          <div class="process-content">
+            <h3>Test & Launch</h3>
+            <p>We test the system end to end to ensure data, actions, and workflows move exactly as intended. Everything is validated before launch so nothing breaks under real volume.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-marker">
+            <div class="process-line"></div>
+          </div>
+          <div class="process-content">
+            <h3>Monitor & Optimize</h3>
+            <p>Systems need maintenance. We monitor for issues, update automations as your business evolves, and continuously improve workflows based on what the data tells us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-cta" id="contact">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Scaling shouldn't mean<br>more things breaking.</h2>
+        <p>If your backend can't keep up with your growth, let's build the infrastructure that can.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="/book-call" class="btn btn-primary">Book a Strategy Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="/" class="nav-logo"><img src="../logo.png" alt="TopRidge" height="24"></a>
+        <p class="footer-tagline">Revenue systems that scale.</p>
+      </div>
+      <div class="footer-right">
+        <p>&copy; 2026 TopRidge Marketing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../main.js"></script>
+</body>
+</html>
