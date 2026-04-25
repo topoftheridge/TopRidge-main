@@ -586,6 +586,13 @@ a {
   line-height: 1.65;
 }
 
+.process-content .process-headline {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 /* ---- Results ---- */
 
 .results-grid {
