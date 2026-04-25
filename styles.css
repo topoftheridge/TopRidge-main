@@ -425,6 +425,51 @@ a {
   transform: translateY(-2px);
 }
 
+.approach-card-bg {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+.approach-card-bg:hover {
+  background: none;
+  background-size: cover;
+  background-position: center;
+}
+
+.approach-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 20, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: inherit;
+  transition: all var(--transition);
+}
+
+.approach-card-bg:hover .approach-card-overlay {
+  background: rgba(37, 99, 235, 0.25);
+  backdrop-filter: blur(3px);
+}
+
+.approach-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 36px 32px;
+}
+
+.approach-card-bg h3,
+.approach-card-bg p {
+  color: #fff;
+}
+
+.approach-card-bg p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .approach-icon {
   width: 44px;
   height: 44px;
