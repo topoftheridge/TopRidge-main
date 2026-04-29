@@ -738,21 +738,61 @@ a {
   background: var(--bg-primary);
 }
 
-.cta-layout {
+.cta-content {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.cta-content > p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ---- Contact Page ---- */
+
+.contact-page {
+  padding-top: 140px;
+}
+
+.contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: start;
 }
 
-.cta-left h2 {
-  font-size: 1.8rem;
+.contact-left h1 {
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.contact-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
   margin-bottom: 32px;
 }
 
-.cta-checklist {
+.contact-checklist {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -760,7 +800,7 @@ a {
   margin-bottom: 32px;
 }
 
-.cta-checklist li {
+.contact-checklist li {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -769,34 +809,28 @@ a {
   line-height: 1.5;
 }
 
-.cta-checklist li svg {
+.contact-checklist li svg {
   flex-shrink: 0;
 }
 
-.cta-email {
+.contact-email {
   font-size: 0.88rem;
   color: var(--text-muted);
-  margin-bottom: 32px;
 }
 
-.cta-email a {
+.contact-email a {
   color: var(--text-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.cta-buttons {
-  display: flex;
-  gap: 12px;
-}
-
-.cta-form {
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.cta-form-title {
+.contact-form-title {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -815,8 +849,8 @@ a {
   color: var(--text-secondary);
 }
 
-.cta-form input,
-.cta-form textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 12px 16px;
   background: var(--bg-card);
@@ -829,17 +863,17 @@ a {
   transition: border-color var(--transition);
 }
 
-.cta-form input::placeholder,
-.cta-form textarea::placeholder {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
   color: var(--text-muted);
 }
 
-.cta-form input:focus,
-.cta-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   border-color: var(--accent);
 }
 
-.cta-form textarea {
+.contact-form textarea {
   resize: vertical;
   min-height: 110px;
 }
@@ -1159,7 +1193,7 @@ a {
 @media (max-width: 900px) {
   .approach-grid,
   .outcomes-layout,
-  .cta-layout {
+  .contact-layout {
     grid-template-columns: 1fr;
     gap: 40px;
   }

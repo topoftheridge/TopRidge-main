@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Sales — TopRidge Marketing</title>
+  <meta name="description" content="Get in touch with TopRidge Marketing. Tell us about your business and what you're looking to build.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="/" class="nav-logo"><img src="../logo.png" alt="TopRidge" class="logo-img"></a>
+      <div class="nav-links" id="navLinks">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a>
+          <div class="nav-dropdown-menu">
+            <a href="/growth">Growth</a>
+            <a href="/conversion">Conversion</a>
+            <a href="/operations">Operations</a>
+            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/press">Press</a>
+          </div>
+        </div>
+        <a href="/press">Press</a>
+        <a href="/#process">Process</a>
+        <a href="/book-call" class="btn btn-sm">Start a Conversation</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="section contact-page">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-left">
+          <h1>Contact Sales</h1>
+          <p class="contact-sub">Let's figure out the right system for your business.</p>
+          <ul class="contact-checklist">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(37,99,235,0.1)"/><path d="M6 10.5l2.5 2.5L14 8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Pinpoint where performance is leaking
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(37,99,235,0.1)"/><path d="M6 10.5l2.5 2.5L14 8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              See how the system should be structured
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(37,99,235,0.1)"/><path d="M6 10.5l2.5 2.5L14 8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Decide what to fix or build together
+            </li>
+          </ul>
+          <p class="contact-email">Prefer email? <a href="mailto:hello@top-ridge.com"><strong>hello@top-ridge.com</strong></a></p>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/placeholder" method="POST">
+            <p class="contact-form-title">Tell us how we can help</p>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" placeholder="example@topridge.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your business and what you're looking to build</label>
+              <textarea id="message" name="message" placeholder="What are you working on, and what are you trying to improve or scale?" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="/" class="nav-logo"><img src="../logo.png" alt="TopRidge" height="24"></a>
+        <p class="footer-tagline">Revenue systems that scale.</p>
+      </div>
+      <div class="footer-right">
+        <p>&copy; 2026 TopRidge Marketing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
