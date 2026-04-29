@@ -472,14 +472,14 @@ a {
   padding: 36px 32px;
 }
 
-.approach-card-bg h3,
-.approach-card-bg p {
+.approach-card-bg h3 {
   color: #fff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
-.approach-card-bg p {
-  color: #fff;
+.approach-card-bg .approach-card-content p {
+  color: #fff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .approach-icon {
