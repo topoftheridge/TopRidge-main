@@ -443,7 +443,12 @@ a {
 .approach-card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 12, 20, 0.18);
+  background: linear-gradient(
+    to top,
+    rgba(10, 12, 20, 0.45) 0%,
+    rgba(10, 12, 20, 0.18) 50%,
+    rgba(10, 12, 20, 0.12) 100%
+  );
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
   border-radius: inherit;
@@ -451,7 +456,12 @@ a {
 }
 
 .approach-card-bg:hover .approach-card-overlay {
-  background: rgba(10, 12, 20, 0.25);
+  background: linear-gradient(
+    to top,
+    rgba(10, 12, 20, 0.5) 0%,
+    rgba(10, 12, 20, 0.22) 50%,
+    rgba(10, 12, 20, 0.15) 100%
+  );
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
