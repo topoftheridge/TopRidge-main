@@ -219,7 +219,7 @@ a {
 
 .nav-dropdown-menu a:hover {
   background: var(--bg-secondary);
-  color: var(--text-primary);
+  color: #3675ff;
 }
 
 .nav-toggle {
@@ -538,6 +538,10 @@ a {
   border-radius: calc(var(--radius-lg) - 1px);
   padding: 40px 36px;
   height: 100%;
+}
+
+.section-dark .system-card-inner {
+  background: var(--bg-secondary);
 }
 
 .system-card h3 {

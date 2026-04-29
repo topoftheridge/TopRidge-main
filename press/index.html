@@ -9,18 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
-  <style>
-    .press-cards .system-card {
-      background: linear-gradient(165deg, #f0f4ff 0%, #ffffff 100%);
-      border-left: 3px solid var(--accent);
-      border-color: var(--border);
-      border-left-color: var(--accent);
-    }
-    .press-cards .system-card:hover {
-      border-left-color: #6366f1;
-      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.08);
-    }
-  </style>
+  <!-- press cards use global system-card styles -->
 </head>
 <body>
   <nav class="nav" id="nav">
@@ -39,7 +28,7 @@
         </div>
         <a href="/press">Press</a>
         <a href="/#process">Process</a>
-        <a href="/#contact" class="btn btn-sm">Start a Conversation</a>
+        <a href="https://www.top-ridge.com/contact" class="btn btn-sm">Start a Conversation</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span>
@@ -51,7 +40,6 @@
   <section class="hero service-hero">
     <div class="hero-bg"><div class="grid-overlay"></div></div>
     <div class="container hero-content">
-      <span class="section-tag">Press</span>
       <h1>Get featured on trusted publications.</h1>
       <p class="hero-sub">We place you or your brand across media outlets and online publications to build credibility, visibility, and authority.</p>
       <div class="hero-actions">
@@ -65,7 +53,6 @@
   <section class="section" id="packages">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Packages</span>
         <h2>Choose your level of visibility.</h2>
       </div>
       <div class="pricing-grid pricing-grid-3">
@@ -127,7 +114,6 @@
   <section class="section" id="what">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Overview</span>
         <h2>What is this?</h2>
         <p class="section-desc">We help businesses & individuals get featured on relevant publications through our network of media and publishing partners. Whether it's press distribution or direct placements, everything is handled end-to-end.</p>
       </div>
@@ -138,25 +124,32 @@
   <section class="section" id="benefits">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Benefits</span>
         <h2>What you get.</h2>
       </div>
       <div class="systems-grid press-cards">
         <div class="system-card">
-          <h3>Increased Credibility</h3>
+          <div class="system-card-inner">
+            <h3>Increased Credibility</h3>
           <p>When people look you up, they find real coverage on real publications — building instant trust and legitimacy.</p>
+          </div>
         </div>
         <div class="system-card">
-          <h3>More Visibility</h3>
+          <div class="system-card-inner">
+            <h3>More Visibility</h3>
           <p>Get seen across trusted platforms and publications that your audience already reads and respects.</p>
+          </div>
         </div>
         <div class="system-card">
-          <h3>Reusable Content</h3>
+          <div class="system-card-inner">
+            <h3>Reusable Content</h3>
           <p>Every placement gives you content you can repurpose across your website, social media, and ad campaigns.</p>
+          </div>
         </div>
         <div class="system-card">
-          <h3>Stronger Brand Positioning</h3>
+          <div class="system-card-inner">
+            <h3>Stronger Brand Positioning</h3>
           <p>Being featured in the right places positions your brand as an authority in your space — not just another business.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -166,25 +159,32 @@
   <section class="section" id="placements">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Placements</span>
         <h2>Types of placements.</h2>
       </div>
       <div class="systems-grid press-cards">
         <div class="system-card">
-          <h3>News & Press Distribution</h3>
+          <div class="system-card-inner">
+            <h3>News & Press Distribution</h3>
           <p>Get your story distributed across news networks and syndicated outlets for broad reach and awareness.</p>
+          </div>
         </div>
         <div class="system-card">
-          <h3>Brand Features & Articles</h3>
+          <div class="system-card-inner">
+            <h3>Brand Features & Articles</h3>
           <p>In-depth features and articles that tell your story and position your brand in front of the right audience.</p>
+          </div>
         </div>
         <div class="system-card">
-          <h3>Industry & Niche Publications</h3>
+          <div class="system-card-inner">
+            <h3>Industry & Niche Publications</h3>
           <p>Targeted placements on publications specific to your industry, reaching the people who matter most.</p>
+          </div>
         </div>
         <div class="system-card">
-          <h3>Sponsored Content Placements</h3>
+          <div class="system-card-inner">
+            <h3>Sponsored Content Placements</h3>
           <p>Sponsored features on established platforms that blend naturally with editorial content for maximum impact.</p>
+          </div>
         </div>
       </div>
     </div>
