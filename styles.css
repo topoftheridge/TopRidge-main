@@ -432,6 +432,9 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   padding: 0;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .approach-card-bg:hover {
@@ -443,23 +446,34 @@ a {
 .approach-card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 12, 20, 0.35);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: linear-gradient(
+    to top,
+    rgba(8, 10, 18, 0.88) 0%,
+    rgba(8, 10, 18, 0.55) 50%,
+    rgba(8, 10, 18, 0.15) 100%
+  );
   border-radius: inherit;
   transition: all var(--transition);
 }
 
 .approach-card-bg:hover .approach-card-overlay {
-  background: rgba(37, 99, 235, 0.25);
-  backdrop-filter: blur(3px);
+  background: linear-gradient(
+    to top,
+    rgba(8, 10, 18, 0.92) 0%,
+    rgba(8, 10, 18, 0.6) 50%,
+    rgba(8, 10, 18, 0.2) 100%
+  );
 }
 
 .approach-card-content {
   position: relative;
   z-index: 1;
-  padding: 36px 32px;
+  padding: 40px 32px;
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .approach-card-bg h3,
@@ -468,32 +482,35 @@ a {
 }
 
 .approach-card-bg p {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 280px;
 }
 
 .approach-icon {
-  width: 44px;
-  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: none;
-  border-radius: 0;
-  color: var(--accent);
-  margin-bottom: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.approach-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 .approach-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   letter-spacing: -0.01em;
 }
 
 .approach-card p {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 /* ---- Systems Grid ---- */
