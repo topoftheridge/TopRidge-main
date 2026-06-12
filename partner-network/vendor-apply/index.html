@@ -3,13 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apply To Become A Vendor Partner | TopRidge Partner Network</title>
-  <meta name="description" content="Apply to become an approved vendor partner in the TopRidge Partner Network.">
+  <title>Apply As A Vendor Partner — TopRidge Partner Network</title>
+  <meta name="description" content="Apply to become a vetted vendor partner in the TopRidge Partner Network and receive qualified client requests from trusted real estate professionals.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../partner-network.css">
+  <link rel="icon" href="../../favicon.ico">
+  <style>
+    .apply-page {
+      padding: 140px 0 80px;
+      min-height: 100vh;
+    }
+    .apply-wrapper {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .apply-header { margin-bottom: 48px; }
+    .apply-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .apply-badge .dot {
+      width: 5px; height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .apply-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .apply-header p {
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    .apply-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .form-group label .req { color: #dc2626; margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .form-group .error-msg {
+      display: none;
+      color: #dc2626;
+      font-size: 0.78rem;
+      margin-top: 4px;
+    }
+    .form-group.error .error-msg { display: block; }
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea { border-color: #dc2626; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-submit { padding-top: 8px; }
+
+    .form-message {
+      display: none;
+      padding: 20px 24px;
+      border-radius: var(--radius-lg);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+    .form-message.show-success {
+      display: block;
+      background: rgba(34, 197, 94, 0.06);
+      color: #16a34a;
+      border: 1px solid rgba(34, 197, 94, 0.15);
+    }
+    .form-message.show-error {
+      display: block;
+      background: rgba(220, 38, 38, 0.06);
+      color: #dc2626;
+      border: 1px solid rgba(220, 38, 38, 0.15);
+    }
+
+    @media (max-width: 640px) {
+      .apply-page { padding: 120px 0 60px; }
+      .apply-header h1 { font-size: 1.7rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -34,100 +161,113 @@
     </div>
   </nav>
 
-  <section class="pn-form-page">
+  <section class="apply-page">
     <div class="container">
-      <h1>Apply To Become A Vendor Partner</h1>
-      <p class="form-sub">We work with vetted local vendors that provide reliable service to buyers, sellers, and homeowners.</p>
-
-      <form class="pn-form" id="vendorForm" onsubmit="event.preventDefault(); submitVendorApplication(this);">
-        <div class="pn-form-group">
-          <label for="company_name">Company Name *</label>
-          <input type="text" id="company_name" name="company_name" required>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="contact_name">Contact Name *</label>
-          <input type="text" id="contact_name" name="contact_name" required>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required>
-          <span class="error-msg">Valid email required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="phone">Phone *</label>
-          <input type="tel" id="phone" name="phone" required>
-          <span class="error-msg">Valid phone required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="website">Website</label>
-          <input type="url" id="website" name="website" placeholder="https://">
-        </div>
-        <div class="pn-form-group">
-          <label for="service_category">Service Category *</label>
-          <select id="service_category" name="service_category" required>
-            <option value="">Select a category</option>
-            <option value="Moving">Moving</option>
-            <option value="Packing">Packing</option>
-            <option value="Junk Removal">Junk Removal</option>
-            <option value="Cleaning">Cleaning</option>
-            <option value="Painting">Painting</option>
-            <option value="Flooring">Flooring</option>
-            <option value="Locksmith">Locksmith</option>
-            <option value="Landscaping">Landscaping</option>
-            <option value="Pool Service">Pool Service</option>
-            <option value="Other">Other</option>
-          </select>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="service_area">Service Area *</label>
-          <input type="text" id="service_area" name="service_area" required placeholder="e.g. Lee County, Collier County">
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="google_business_profile">Google Business Profile Link</label>
-          <input type="url" id="google_business_profile" name="google_business_profile" placeholder="https://">
-        </div>
-        <div class="pn-form-group">
-          <label for="review_rating">Approximate Review Count / Rating</label>
-          <input type="text" id="review_rating" name="review_rating" placeholder="e.g. 85 reviews, 4.8 stars">
-        </div>
-        <div class="pn-form-group">
-          <label for="licensed_insured">Are you licensed and insured? *</label>
-          <select id="licensed_insured" name="licensed_insured" required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-            <option value="partially">Partially</option>
-          </select>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="response_time">How quickly do you respond to new leads? *</label>
-          <select id="response_time" name="response_time" required>
-            <option value="">Select</option>
-            <option value="within_1_hour">Within 1 hour</option>
-            <option value="within_4_hours">Within 4 hours</option>
-            <option value="same_day">Same day</option>
-            <option value="next_business_day">Next business day</option>
-          </select>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="trust_reason">Why would real estate professionals trust you with their clients? *</label>
-          <textarea id="trust_reason" name="trust_reason" required></textarea>
-          <span class="error-msg">Required</span>
+      <div class="apply-wrapper">
+        <div class="apply-header">
+          <div class="apply-badge"><span class="dot"></span> Vendor Partner Application</div>
+          <h1>Apply To Become A Vendor Partner</h1>
+          <p>TopRidge Partner Network works with vetted local vendors that can represent real estate partners well and provide reliable service to buyers, sellers, and homeowners.</p>
         </div>
 
-        <div class="pn-form-submit">
-          <button type="submit" class="btn btn-primary btn-full">Apply As Vendor Partner</button>
-        </div>
-      </form>
+        <form class="apply-form" id="vendorForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company_name">Company Name <span class="req">*</span></label>
+              <input type="text" id="company_name" name="company_name" required>
+              <span class="error-msg">Required</span>
+            </div>
+            <div class="form-group">
+              <label for="contact_name">Contact Name <span class="req">*</span></label>
+              <input type="text" id="contact_name" name="contact_name" required>
+              <span class="error-msg">Required</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required>
+              <span class="error-msg">Valid email required</span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required>
+              <span class="error-msg">Required</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="website">Website</label>
+            <input type="url" id="website" name="website" placeholder="https://...">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service_category">Service Category <span class="req">*</span></label>
+              <select id="service_category" name="service_category" required>
+                <option value="">Select a category</option>
+                <option value="Moving">Moving</option>
+                <option value="Packing">Packing</option>
+                <option value="Junk Removal">Junk Removal</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Painting">Painting</option>
+                <option value="Flooring">Flooring</option>
+                <option value="Locksmith">Locksmith</option>
+                <option value="Landscaping">Landscaping</option>
+                <option value="Pool Service">Pool Service</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="error-msg">Required</span>
+            </div>
+            <div class="form-group">
+              <label for="service_area">Service Area <span class="req">*</span></label>
+              <input type="text" id="service_area" name="service_area" required placeholder="e.g. Lee County, FL">
+              <span class="error-msg">Required</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="google_business_profile">Google Business Profile Link</label>
+            <input type="url" id="google_business_profile" name="google_business_profile" placeholder="https://...">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="review_rating">Approximate Review Count / Rating</label>
+              <input type="text" id="review_rating" name="review_rating" placeholder="e.g. 4.8 stars, 120 reviews">
+            </div>
+            <div class="form-group">
+              <label for="licensed_insured">Licensed &amp; Insured? <span class="req">*</span></label>
+              <select id="licensed_insured" name="licensed_insured" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Partially">Partially / In Progress</option>
+              </select>
+              <span class="error-msg">Required</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="response_time">How quickly do you usually respond to new leads? <span class="req">*</span></label>
+            <select id="response_time" name="response_time" required>
+              <option value="">Select</option>
+              <option value="Under 1 hour">Under 1 hour</option>
+              <option value="1-4 hours">1–4 hours</option>
+              <option value="Same day">Same day</option>
+              <option value="Next business day">Next business day</option>
+            </select>
+            <span class="error-msg">Required</span>
+          </div>
+          <div class="form-group">
+            <label for="trust_reason">Why would real estate professionals trust you with their clients? <span class="req">*</span></label>
+            <textarea id="trust_reason" name="trust_reason" required placeholder="Tell us about your reputation, experience, and why agents should feel confident recommending you."></textarea>
+            <span class="error-msg">Required</span>
+          </div>
 
-      <div class="pn-form-message" id="form-success">Your vendor application has been submitted. TopRidge will review and follow up.</div>
-      <div class="pn-form-message" id="form-error">Something went wrong. Please try again or contact TopRidge directly.</div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary" style="width:100%; padding: 14px 28px;">Apply As A Vendor Partner</button>
+          </div>
+        </form>
+
+        <div class="form-message" id="form-success">Your vendor application has been submitted. TopRidge will review your company and follow up if there is a fit for the network.</div>
+        <div class="form-message" id="form-error">Something went wrong while submitting your application. Please try again or contact TopRidge directly.</div>
+      </div>
     </div>
   </section>
 
@@ -147,6 +287,7 @@
             <li><a href="/operations">Operations</a></li>
             <li><a href="/consulting">Consulting</a></li>
             <li><a href="/press">Press</a></li>
+            <li><a href="/partner-network">Partner Network</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -154,7 +295,6 @@
           <ul>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/book-call">Book a Call</a></li>
-            <li><a href="/partner-network">Partner Network</a></li>
           </ul>
         </div>
       </div>
@@ -169,6 +309,43 @@
   </footer>
 
   <script src="../../main.js"></script>
-  <script src="../partner-network.js"></script>
+  <script>
+    (function() {
+      function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+      document.getElementById('vendorForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = this;
+        var valid = true;
+
+        form.querySelectorAll('.form-group').forEach(function(g) { g.classList.remove('error'); });
+
+        form.querySelectorAll('[required]').forEach(function(field) {
+          var group = field.closest('.form-group');
+          if (!group) return;
+          if (field.value.trim() === '') { group.classList.add('error'); valid = false; }
+        });
+
+        form.querySelectorAll('input[type="email"]').forEach(function(f) {
+          if (f.value && !validateEmail(f.value)) {
+            var g = f.closest('.form-group');
+            if (g) { g.classList.add('error'); valid = false; }
+          }
+        });
+
+        if (!valid) return;
+
+        var data = {};
+        new FormData(form).forEach(function(v, k) { data[k] = v; });
+        console.log('Vendor Application:', data);
+
+        // TODO: POST to Supabase vendor_applications table
+        // TODO: Send notification email
+
+        form.style.display = 'none';
+        document.getElementById('form-success').classList.add('show-success');
+      });
+    })();
+  </script>
 </body>
 </html>

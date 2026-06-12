@@ -3,14 +3,457 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TopRidge Partner Network — Trusted Vendor Network For Real Estate Professionals</title>
-  <meta name="description" content="TopRidge Partner Network connects approved real estate professionals with vetted local home service providers.">
+  <title>TopRidge Partner Network | Trusted Vendor Connections For Real Estate Professionals</title>
+  <meta name="description" content="TopRidge Partner Network helps approved real estate professionals connect buyers and sellers with vetted local home service vendors around moving, closing, and property prep.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="partner-network.css">
   <link rel="icon" href="../favicon.ico">
+  <style>
+    /* ============================================
+       Partner Network — Premium Landing Page
+       ============================================ */
+
+    /* Hero */
+    .pn-hero {
+      position: relative;
+      padding: 160px 0 100px;
+      background: var(--bg-dark);
+      overflow: hidden;
+    }
+    .pn-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 30% 0%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 100%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .pn-hero .container { position: relative; z-index: 1; }
+    .pn-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border: 1px solid var(--border-dark);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-white-secondary);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .pn-hero-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .pn-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      color: var(--text-white);
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+    .pn-hero h1 span { color: var(--accent); }
+    .pn-hero-sub {
+      font-size: 1.12rem;
+      color: var(--text-white-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .pn-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+    .pn-hero-trust {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-dark);
+    }
+    .pn-hero-trust span {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pn-hero-trust span::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Section base */
+    .pn-section { padding: 100px 0; }
+    .pn-section-dark { background: var(--bg-dark); color: var(--text-white); }
+    .pn-section-dark .pn-section-header h2 { color: var(--text-white); }
+    .pn-section-dark .pn-section-header p { color: var(--text-white-secondary); }
+    .pn-section-alt { background: var(--bg-secondary); }
+
+    .pn-section-header { margin-bottom: 56px; }
+    .pn-section-header.center { text-align: center; }
+    .pn-section-header.center p { margin-left: auto; margin-right: auto; }
+    .pn-section-header h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+    .pn-section-header p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .pn-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .pn-section-dark .pn-label { color: var(--accent); }
+
+    /* Callout */
+    .pn-callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(37, 99, 235, 0.04);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      margin-top: 32px;
+      max-width: 600px;
+    }
+    .pn-callout-icon {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+    .pn-callout p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Cards — Who It Helps */
+    .pn-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .pn-who-card {
+      position: relative;
+      background: var(--bg-dark-secondary);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: border-color 0.3s;
+    }
+    .pn-who-card:hover { border-color: rgba(255,255,255,0.15); }
+    .pn-who-card-icon {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+    .pn-who-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-white);
+    }
+    .pn-who-card p {
+      font-size: 0.9rem;
+      color: var(--text-white-secondary);
+      line-height: 1.65;
+    }
+
+    /* Services Grid */
+    .pn-services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .pn-svc {
+      text-align: center;
+      padding: 28px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .pn-svc:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .pn-svc-icon {
+      width: 40px; height: 40px;
+      margin: 0 auto 14px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent-dim);
+      border-radius: var(--radius);
+      color: var(--accent);
+    }
+    .pn-svc h3 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .pn-svc p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Steps */
+    .pn-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .pn-step-item {
+      position: relative;
+      padding: 0 28px;
+      text-align: center;
+    }
+    .pn-step-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 24px;
+      right: 0;
+      width: 1px;
+      height: 40px;
+      background: var(--border-dark);
+    }
+    .pn-step-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+    .pn-step-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-white);
+      margin-bottom: 8px;
+    }
+    .pn-step-item p {
+      font-size: 0.85rem;
+      color: var(--text-white-secondary);
+      line-height: 1.6;
+    }
+
+    /* Benefits */
+    .pn-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .pn-benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 18px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .pn-check {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent-dim);
+      border-radius: 50%;
+      margin-top: 1px;
+    }
+    .pn-check svg { width: 12px; height: 12px; color: var(--accent); }
+    .pn-benefit-item span {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* CTA Blocks */
+    .pn-cta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .pn-cta-card {
+      padding: 48px 40px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+    .pn-cta-card.dark {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-dark);
+    }
+    .pn-cta-card.dark h3 { color: var(--text-white); }
+    .pn-cta-card.dark p { color: var(--text-white-secondary); }
+    .pn-cta-card.light {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+    }
+    .pn-cta-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .pn-cta-card p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FAQ */
+    .pn-faq-list { max-width: 680px; margin: 0 auto; }
+    .pn-faq-item { border-bottom: 1px solid var(--border); }
+    .pn-faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: none; border: none;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 20px 0;
+      cursor: pointer;
+      text-align: left;
+      line-height: 1.5;
+    }
+    .pn-faq-q svg {
+      flex-shrink: 0;
+      margin-left: 16px;
+      transition: transform 0.25s ease;
+    }
+    .pn-faq-item.active .pn-faq-q svg { transform: rotate(180deg); }
+    .pn-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .pn-faq-a p {
+      padding-bottom: 20px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Compliance */
+    .pn-compliance-box {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 28px 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--bg-secondary);
+    }
+    .pn-compliance-box h4 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .pn-compliance-box p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .pn-compliance-box p + p { margin-top: 10px; }
+
+    /* Final CTA */
+    .pn-final-cta {
+      padding: 120px 0;
+      background: var(--bg-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pn-final-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .pn-final-cta .container { position: relative; z-index: 1; }
+    .pn-final-cta h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-white);
+      margin-bottom: 14px;
+      line-height: 1.12;
+    }
+    .pn-final-cta p {
+      font-size: 1.05rem;
+      color: var(--text-white-secondary);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .pn-final-cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .pn-services-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .pn-hero { padding: 120px 0 80px; }
+      .pn-hero h1 { font-size: 2.4rem; }
+      .pn-section { padding: 72px 0; }
+      .pn-section-header h2 { font-size: 1.85rem; }
+      .pn-grid-3 { grid-template-columns: 1fr; gap: 14px; }
+      .pn-services-grid { grid-template-columns: repeat(2, 1fr); }
+      .pn-steps-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .pn-step-item::after { display: none; }
+      .pn-benefits-grid { grid-template-columns: 1fr; }
+      .pn-cta-row { grid-template-columns: 1fr; }
+      .pn-final-cta { padding: 80px 0; }
+      .pn-final-cta h2 { font-size: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .pn-hero h1 { font-size: 1.9rem; }
+      .pn-hero-actions { flex-direction: column; }
+      .pn-hero-actions .btn { width: 100%; text-align: center; }
+      .pn-services-grid { grid-template-columns: 1fr; }
+      .pn-steps-grid { grid-template-columns: 1fr; }
+      .pn-final-cta-actions { flex-direction: column; align-items: center; }
+      .pn-final-cta-actions .btn { width: 100%; text-align: center; max-width: 320px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -35,187 +478,281 @@
     </div>
   </nav>
 
-  <!-- 1. HERO -->
+  <!-- ===== HERO ===== -->
   <section class="pn-hero">
     <div class="container">
-      <h1>A Trusted Vendor Network For Real Estate Professionals</h1>
-      <p class="pn-hero-sub">Connect your clients with vetted local movers, cleaners, painters, and other trusted home service providers during the closing and moving process.</p>
+      <div class="pn-hero-badge"><span class="dot"></span> Private Partner Network</div>
+      <h1>A Trusted Vendor Network For <span>Real Estate Professionals</span></h1>
+      <p class="pn-hero-sub">Connect your buyers and sellers with vetted local movers, cleaners, painters, and other trusted home service providers — during the closing and moving process.</p>
       <div class="pn-hero-actions">
-        <a href="/partner-network/apply" class="btn btn-primary">Apply To Join The Network</a>
-        <a href="/partner-network/vendor-apply" class="btn btn-ghost">Apply As A Vendor Partner</a>
+        <a href="/partner-network/apply" class="btn btn-primary">Apply As A Real Estate Partner</a>
+        <a href="/partner-network/vendor-apply" class="btn btn-ghost" style="border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.8);">Apply As A Vendor Partner</a>
       </div>
-      <p class="pn-trust">Application-based access. Vetted vendors. Client permission required.</p>
+      <div class="pn-hero-trust">
+        <span>Application-based access</span>
+        <span>Vetted vendors only</span>
+        <span>Client permission required</span>
+      </div>
     </div>
   </section>
 
-  <!-- 2. WHAT THIS IS -->
+  <!-- ===== WHAT THIS IS ===== -->
   <section class="pn-section">
     <div class="container">
+      <div class="pn-label">The Network</div>
       <div class="pn-section-header">
-        <h2>A Client-First Partner Network</h2>
-        <p>Approved real estate professionals submit client service requests. TopRidge reviews each request and routes it to vetted local vendors screened for quality and professionalism.</p>
+        <h2>A Client-First Partner Network Built Around Real Estate Relationships</h2>
+        <p>Approved real estate professionals submit client service requests through a private portal. TopRidge reviews each request and routes it to a vetted local vendor — so your clients get reliable help, and your reputation stays protected.</p>
       </div>
-      <div class="pn-callout">This is not an open public lead form. The network is private and application-based.</div>
+      <div class="pn-callout">
+        <svg class="pn-callout-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+        <p>This is not an open public lead form. The network is private and application-based to protect clients, agents, vendors, and the TopRidge brand.</p>
+      </div>
     </div>
   </section>
 
-  <!-- 3. WHO IT HELPS -->
-  <section class="pn-section">
+  <!-- ===== WHO IT HELPS ===== -->
+  <section class="pn-section pn-section-dark">
     <div class="container">
-      <div class="pn-section-header"><h2>Who The Partner Network Helps</h2></div>
-      <div class="pn-cards-3">
-        <div class="pn-card">
+      <div class="pn-label">Who It's For</div>
+      <div class="pn-section-header">
+        <h2>Built For Three Sides Of Every Transaction</h2>
+      </div>
+      <div class="pn-grid-3">
+        <div class="pn-who-card">
+          <div class="pn-who-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
           <h3>Real Estate Professionals</h3>
-          <p>Offer clients a curated resource for trusted home services around closing — without personally vetting every vendor.</p>
+          <p>Give your buyers and sellers a trusted resource for moving, closing, and home service needs — without chasing vendors yourself.</p>
         </div>
-        <div class="pn-card">
-          <h3>Clients (Buyers &amp; Sellers)</h3>
-          <p>Get connected with vetted, reliable providers recommended through your agent. No cold-calling strangers.</p>
+        <div class="pn-who-card">
+          <div class="pn-who-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Buyers &amp; Sellers</h3>
+          <p>Get connected with reliable local companies that have been reviewed before being accepted into the network.</p>
         </div>
-        <div class="pn-card">
+        <div class="pn-who-card">
+          <div class="pn-who-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
           <h3>Vendors &amp; Service Providers</h3>
-          <p>Receive qualified, real-time client requests from approved real estate professionals — without paying for ads.</p>
+          <p>Receive qualified opportunities from homeowners who are actively buying, selling, moving, or preparing a property.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. SERVICES COVERED -->
+  <!-- ===== SERVICES ===== -->
   <section class="pn-section">
     <div class="container">
-      <div class="pn-section-header">
-        <h2>Services Commonly Needed Around Closing</h2>
+      <div class="pn-label">Services</div>
+      <div class="pn-section-header center">
+        <h2>Home Services Commonly Needed Around Closing</h2>
       </div>
       <div class="pn-services-grid">
-        <div class="pn-service-card"><h3>Local Moving</h3><p>Licensed local movers for residential moves.</p></div>
-        <div class="pn-service-card"><h3>Packing Help</h3><p>Professional packing assistance including fragile items.</p></div>
-        <div class="pn-service-card"><h3>Junk Removal</h3><p>Removal of unwanted furniture, appliances, and debris.</p></div>
-        <div class="pn-service-card"><h3>Move-In / Move-Out Cleaning</h3><p>Deep cleaning for properties being vacated or prepared.</p></div>
-        <div class="pn-service-card"><h3>Interior Painting</h3><p>Touch-up or full-room painting to refresh a property.</p></div>
-        <div class="pn-service-card"><h3>Flooring / Carpet</h3><p>Carpet cleaning, replacement, or hardwood refinishing.</p></div>
-        <div class="pn-service-card"><h3>Locksmiths</h3><p>Lock rekeying, replacement, or smart lock installation.</p></div>
-        <div class="pn-service-card"><h3>Landscaping</h3><p>Lawn care, yard cleanup, and curb appeal improvements.</p></div>
-        <div class="pn-service-card"><h3>Pool Service</h3><p>Pool cleaning, maintenance, and seasonal services.</p></div>
-        <div class="pn-service-card"><h3>Other Home Services</h3><p>Handyman work, pressure washing, window cleaning, and more.</p></div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="22" height="12" rx="2"/><path d="M12 12h.01"/></svg></div>
+          <h3>Local Moving</h3>
+          <p>Trusted local movers for residential moves</p>
+        </div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <h3>Packing Help</h3>
+          <p>Professional packing before moving day</p>
+        </div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+          <h3>Junk Removal</h3>
+          <p>Clean-outs for listings, moves, and estates</p>
+        </div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <h3>Deep Cleaning</h3>
+          <p>Move-in / move-out cleaning support</p>
+        </div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></div>
+          <h3>Interior Painting</h3>
+          <p>Refresh before listing or move-in</p>
+        </div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div>
+          <h3>Flooring / Carpet</h3>
+          <p>New floors, repairs, or carpet cleaning</p>
+        </div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h3>Locksmiths</h3>
+          <p>Lock changes after closing</p>
+        </div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Landscaping</h3>
+          <p>Curb appeal and outdoor care</p>
+        </div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div>
+          <h3>Pool Service</h3>
+          <p>Pool cleaning and maintenance</p>
+        </div>
+        <div class="pn-svc">
+          <div class="pn-svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+          <h3>Other Services</h3>
+          <p>Handyman, pressure washing, and more</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. HOW IT WORKS -->
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="pn-section pn-section-dark">
+    <div class="container">
+      <div class="pn-label">Process</div>
+      <div class="pn-section-header center">
+        <h2>How The Network Works</h2>
+        <p>Simple, private, and designed to protect everyone involved.</p>
+      </div>
+      <div class="pn-steps-grid">
+        <div class="pn-step-item">
+          <div class="pn-step-num">01</div>
+          <h3>Apply</h3>
+          <p>Submit your license info, brokerage, and service area.</p>
+        </div>
+        <div class="pn-step-item">
+          <div class="pn-step-num">02</div>
+          <h3>Get Approved</h3>
+          <p>TopRidge reviews your application and verifies your credentials.</p>
+        </div>
+        <div class="pn-step-item">
+          <div class="pn-step-num">03</div>
+          <h3>Submit Requests</h3>
+          <p>Use the private portal to submit client service requests.</p>
+        </div>
+        <div class="pn-step-item">
+          <div class="pn-step-num">04</div>
+          <h3>Client Connected</h3>
+          <p>TopRidge routes the request to a vetted local vendor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY PARTNERS USE IT ===== -->
   <section class="pn-section">
     <div class="container">
+      <div class="pn-label">Why It Works</div>
       <div class="pn-section-header">
-        <h2>How The Partner Network Works</h2>
-        <p>A simple, private process designed to protect clients, agents, and vendors.</p>
+        <h2>Built To Protect The Relationship, Not Risk It</h2>
+        <p>A bad vendor referral can damage the trust you've spent months building. This network is designed to make sure every recommendation reflects well on you.</p>
       </div>
-      <div class="pn-steps">
-        <div class="pn-step"><div class="pn-step-num">01</div><h3>Apply &amp; Get Approved</h3><p>TopRidge reviews each application based on licensing and professional standing.</p></div>
-        <div class="pn-step"><div class="pn-step-num">02</div><h3>Submit A Client Request</h3><p>Use a private portal to submit service requests with client permission.</p></div>
-        <div class="pn-step"><div class="pn-step-num">03</div><h3>TopRidge Routes It</h3><p>We match the request with a vetted local vendor from the network.</p></div>
-        <div class="pn-step"><div class="pn-step-num">04</div><h3>Client Gets Connected</h3><p>The vendor reaches out directly to coordinate scheduling and details.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. WHY PARTNERS USE IT -->
-  <section class="pn-section">
-    <div class="container">
-      <div class="pn-section-header">
-        <h2>Built To Protect The Relationship</h2>
-        <p>Every recommendation reflects well on you, your brokerage, and your reputation.</p>
-      </div>
-      <div class="pn-benefits">
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Every vendor vetted for licensing, insurance, reviews, and responsiveness.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Client permission required — no unsolicited contact, ever.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>TopRidge manages vendor relationships — you don't have to.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Private portal — not a public form anyone can access.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Free for agents and clients to use.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Strengthens your post-closing client relationship.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. REAL ESTATE PARTNER APPLICATION -->
-  <section class="pn-section">
-    <div class="container">
-      <div class="pn-cta-section">
-        <h2>Apply As A Real Estate Partner</h2>
-        <p>Licensed professionals can apply and gain access to the private client service request portal.</p>
-        <div class="pn-cta-actions"><a href="/partner-network/apply" class="btn btn-primary">Apply To Join The Network</a></div>
+      <div class="pn-benefits-grid">
+        <div class="pn-benefit-item">
+          <div class="pn-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+          <span>Every vendor vetted for licensing, insurance, reviews, and responsiveness</span>
+        </div>
+        <div class="pn-benefit-item">
+          <div class="pn-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+          <span>Client permission required before any request is submitted</span>
+        </div>
+        <div class="pn-benefit-item">
+          <div class="pn-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+          <span>Private application-based network — no public access</span>
+        </div>
+        <div class="pn-benefit-item">
+          <div class="pn-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+          <span>TopRidge manages vendor relationships so you don't have to</span>
+        </div>
+        <div class="pn-benefit-item">
+          <div class="pn-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+          <span>Free to use for agents and clients — no subscription or fees</span>
+        </div>
+        <div class="pn-benefit-item">
+          <div class="pn-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+          <span>Broker-approved compensation only where applicable and disclosed</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 8. VENDOR PARTNER APPLICATION -->
-  <section class="pn-section">
+  <!-- ===== APPLY CTAs ===== -->
+  <section class="pn-section pn-section-alt">
     <div class="container">
-      <div class="pn-cta-section">
-        <h2>Apply As A Vendor Partner</h2>
-        <p>Local home service providers can apply to receive qualified client requests from trusted real estate professionals.</p>
-        <div class="pn-cta-actions"><a href="/partner-network/vendor-apply" class="btn btn-primary">Apply As A Vendor Partner</a></div>
+      <div class="pn-cta-row">
+        <div class="pn-cta-card dark">
+          <h3>Real Estate Professionals</h3>
+          <p>Apply to join the network and give your clients access to vetted local service providers.</p>
+          <a href="/partner-network/apply" class="btn btn-primary">Apply As A Real Estate Partner</a>
+        </div>
+        <div class="pn-cta-card light">
+          <h3>Vendors &amp; Service Providers</h3>
+          <p>Apply to receive qualified client requests from trusted real estate professionals in your area.</p>
+          <a href="/partner-network/vendor-apply" class="btn btn-primary">Apply As A Vendor Partner</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 9. FAQ -->
+  <!-- ===== FAQ ===== -->
   <section class="pn-section">
     <div class="container">
-      <div class="pn-section-header"><h2>Frequently Asked Questions</h2></div>
+      <div class="pn-section-header center">
+        <div class="pn-label">FAQ</div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
       <div class="pn-faq-list">
         <div class="pn-faq-item">
-          <button class="pn-faq-q">Is there a cost for real estate professionals? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>No. The network is free for approved professionals. No subscription or fee to submit service requests.</p></div>
+          <button class="pn-faq-q">Is this free for real estate professionals? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></button>
+          <div class="pn-faq-a"><p>Yes. Approved real estate professionals can use the network as a free client resource.</p></div>
         </div>
         <div class="pn-faq-item">
-          <button class="pn-faq-q">How are vendors vetted? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>Every vendor goes through verification of licensing, insurance, online reviews, response time, and reputation.</p></div>
+          <button class="pn-faq-q">Can real estate professionals receive referral compensation? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></button>
+          <div class="pn-faq-a"><p>Only when properly approved and routed through their brokerage. TopRidge does not pay individual agents directly.</p></div>
         </div>
         <div class="pn-faq-item">
-          <button class="pn-faq-q">Do clients know I submitted a request? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>Yes. Client permission is required before any request is submitted. Transparency is a core requirement.</p></div>
+          <button class="pn-faq-q">Are vendors vetted? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></button>
+          <div class="pn-faq-a"><p>Yes. Vendors are reviewed based on reputation, reviews, communication, professionalism, service area, and ability to represent real estate partners well.</p></div>
         </div>
         <div class="pn-faq-item">
-          <button class="pn-faq-q">Is there referral compensation? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>Some vendor relationships may include optional compensation, always disclosed and routed through your brokerage. Never automatic or the primary purpose.</p></div>
+          <button class="pn-faq-q">Can anyone use the client submission system? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></button>
+          <div class="pn-faq-a"><p>No. The client request system is private and application-based. Real estate professionals must be approved before receiving access.</p></div>
         </div>
         <div class="pn-faq-item">
-          <button class="pn-faq-q">Who can apply? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>Licensed real estate professionals with active brokerage affiliation, and local home service companies with verifiable licensing and insurance.</p></div>
+          <button class="pn-faq-q">What happens after a client request is submitted? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></button>
+          <div class="pn-faq-a"><p>TopRidge reviews the request, confirms the key details, routes it to the appropriate approved vendor, and tracks the status.</p></div>
         </div>
         <div class="pn-faq-item">
-          <button class="pn-faq-q">What happens after I apply? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>TopRidge reviews every application individually. If approved, you'll receive your Partner ID and portal access within a few business days.</p></div>
+          <button class="pn-faq-q">Does the client need to give permission? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></button>
+          <div class="pn-faq-a"><p>Yes. Clients must give permission before their contact information or project details are submitted through the network.</p></div>
         </div>
         <div class="pn-faq-item">
-          <button class="pn-faq-q">Can I choose which vendors my clients work with? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>TopRidge handles vendor matching. Preferences can be noted in the request.</p></div>
+          <button class="pn-faq-q">What types of vendors can apply? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></button>
+          <div class="pn-faq-a"><p>Movers, cleaners, junk removal companies, painters, flooring installers, locksmiths, landscapers, pool service companies, and other trusted home service providers.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 10. COMPLIANCE -->
-  <section class="pn-section">
+  <!-- ===== COMPLIANCE ===== -->
+  <section class="pn-section pn-section-alt" style="padding: 60px 0;">
     <div class="container">
-      <div class="pn-compliance">
-        <h3>Compliance &amp; Disclaimer</h3>
-        <p>The TopRidge Partner Network is a private, application-based vendor coordination service. It is not a licensed referral service, brokerage, or real estate entity. TopRidge does not guarantee vendor performance, pricing, or availability.</p>
-        <p style="margin-top: 12px;">Any referral compensation must be disclosed, approved by the agent's brokerage, and routed through proper channels in accordance with all applicable regulations including RESPA.</p>
-        <p style="margin-top: 12px;">Client permission is required before any service request is submitted. TopRidge reserves the right to approve, deny, or revoke access at any time.</p>
+      <div class="pn-compliance-box">
+        <h4>Compliance &amp; Disclaimer</h4>
+        <p>TopRidge Partner Network is an application-based vendor connection network. Participation is limited to approved real estate professionals and approved vendor partners. Any referral compensation, if applicable, must be approved by the participating real estate professional's brokerage and will not be paid directly to individual agents.</p>
+        <p>Real estate professionals are responsible for following their brokerage policies, licensing rules, and any required client disclosures. Clients must give permission before their contact information or project details are submitted through the network.</p>
       </div>
     </div>
   </section>
 
-  <!-- 11. FINAL CTA -->
-  <section class="pn-section">
+  <!-- ===== FINAL CTA ===== -->
+  <section class="pn-final-cta">
     <div class="container">
-      <div class="pn-cta-section">
-        <h2>Join The TopRidge Partner Network</h2>
-        <p>Whether you're a real estate professional or a home service provider — we'd like to hear from you.</p>
-        <div class="pn-cta-actions">
-          <a href="/partner-network/apply" class="btn btn-primary">Apply As A Real Estate Partner</a>
-          <a href="/partner-network/vendor-apply" class="btn btn-ghost">Apply As A Vendor Partner</a>
-        </div>
+      <h2>Give Your Clients A Trusted<br>Resource Around Every Move</h2>
+      <p>Apply to join the TopRidge Partner Network or apply to become an approved vendor partner.</p>
+      <div class="pn-final-cta-actions">
+        <a href="/partner-network/apply" class="btn btn-primary">Apply As A Real Estate Partner</a>
+        <a href="/partner-network/vendor-apply" class="btn btn-ghost" style="border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.8);">Apply As A Vendor Partner</a>
       </div>
     </div>
   </section>
@@ -256,7 +793,25 @@
       </div>
     </div>
   </footer>
+
   <script src="../main.js"></script>
-  <script src="partner-network.js"></script>
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.pn-faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.pn-faq-a');
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.pn-faq-item').forEach(function(i) {
+          i.classList.remove('active');
+          i.querySelector('.pn-faq-a').style.maxHeight = null;
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

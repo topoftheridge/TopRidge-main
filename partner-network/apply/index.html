@@ -3,13 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apply To Join The TopRidge Partner Network</title>
-  <meta name="description" content="Apply to join the TopRidge Partner Network as an approved real estate professional.">
+  <title>Apply As A Real Estate Partner — TopRidge Partner Network</title>
+  <meta name="description" content="Apply to join the TopRidge Partner Network as an approved real estate professional and give your clients access to vetted local home service vendors.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../partner-network.css">
+  <link rel="icon" href="../../favicon.ico">
+  <style>
+    .apply-page {
+      padding: 140px 0 80px;
+      min-height: 100vh;
+    }
+    .apply-wrapper {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .apply-header {
+      margin-bottom: 48px;
+    }
+    .apply-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .apply-badge .dot {
+      width: 5px; height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .apply-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .apply-header p {
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    /* Form */
+    .apply-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group {}
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .form-group label .req { color: #dc2626; margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .form-group .error-msg {
+      display: none;
+      color: #dc2626;
+      font-size: 0.78rem;
+      margin-top: 4px;
+    }
+    .form-group.error .error-msg { display: block; }
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea { border-color: #dc2626; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .consent-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-top: 8px;
+    }
+    .consent-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .consent-item input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+    }
+    .consent-item label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      cursor: pointer;
+    }
+
+    .form-submit { padding-top: 8px; }
+
+    .form-message {
+      display: none;
+      padding: 20px 24px;
+      border-radius: var(--radius-lg);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+    .form-message.show-success {
+      display: block;
+      background: rgba(34, 197, 94, 0.06);
+      color: #16a34a;
+      border: 1px solid rgba(34, 197, 94, 0.15);
+    }
+    .form-message.show-error {
+      display: block;
+      background: rgba(220, 38, 38, 0.06);
+      color: #dc2626;
+      border: 1px solid rgba(220, 38, 38, 0.15);
+    }
+
+    @media (max-width: 640px) {
+      .apply-page { padding: 120px 0 60px; }
+      .apply-header h1 { font-size: 1.7rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -34,102 +192,115 @@
     </div>
   </nav>
 
-  <section class="pn-form-page">
+  <section class="apply-page">
     <div class="container">
-      <h1>Apply To Join The TopRidge Partner Network</h1>
-      <p class="form-sub">Approved real estate professionals can use the network as a private client resource for trusted home service support.</p>
-
-      <form class="pn-form" id="partnerForm" onsubmit="event.preventDefault(); submitPartnerApplication(this);">
-        <div class="pn-form-group">
-          <label for="full_name">Full Name *</label>
-          <input type="text" id="full_name" name="full_name" required>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required>
-          <span class="error-msg">Valid email required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" required>
-          <span class="error-msg">Valid phone required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="brokerage_name">Brokerage Name *</label>
-          <input type="text" id="brokerage_name" name="brokerage_name" required>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="broker_name">Broker / Office Manager Name *</label>
-          <input type="text" id="broker_name" name="broker_name" required>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="broker_email">Broker / Office Manager Email *</label>
-          <input type="email" id="broker_email" name="broker_email" required>
-          <span class="error-msg">Valid email required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="license_number">License Number *</label>
-          <input type="text" id="license_number" name="license_number" required>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="service_area">Primary Service Area *</label>
-          <input type="text" id="service_area" name="service_area" required placeholder="e.g. Fort Myers, Cape Coral, Naples">
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="social_links">Instagram / LinkedIn / Website</label>
-          <input type="text" id="social_links" name="social_links">
-        </div>
-        <div class="pn-form-group">
-          <label for="monthly_volume">Approximate Monthly Buyer/Seller Volume</label>
-          <input type="text" id="monthly_volume" name="monthly_volume">
-        </div>
-        <div class="pn-form-group">
-          <label for="common_services">What services do your clients commonly ask for?</label>
-          <textarea id="common_services" name="common_services" placeholder="e.g. Moving, cleaning, junk removal, painting..."></textarea>
-        </div>
-        <div class="pn-form-group">
-          <label for="client_resource_only">Are you interested in using this only as a free client resource? *</label>
-          <select id="client_resource_only" name="client_resource_only" required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-          <span class="error-msg">Required</span>
-        </div>
-        <div class="pn-form-group">
-          <label for="interested_in_compensation">Are you interested in broker-approved referral compensation? *</label>
-          <select id="interested_in_compensation" name="interested_in_compensation" required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-            <option value="maybe">Maybe</option>
-          </select>
-          <span class="error-msg">Required</span>
+      <div class="apply-wrapper">
+        <div class="apply-header">
+          <div class="apply-badge"><span class="dot"></span> Real Estate Partner Application</div>
+          <h1>Apply To Join The TopRidge Partner Network</h1>
+          <p>Approved real estate professionals can use the TopRidge Partner Network as a private client resource for trusted moving, closing, and home service support.</p>
         </div>
 
-        <div style="margin-top: 28px;">
-          <div class="pn-checkbox">
-            <input type="checkbox" id="consent_comp" name="compensation_acknowledged" required>
-            <label for="consent_comp">I understand that any referral compensation must be approved by and paid through my brokerage.</label>
+        <form class="apply-form" id="partnerForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="full_name">Full Name <span class="req">*</span></label>
+              <input type="text" id="full_name" name="full_name" required>
+              <span class="error-msg">Required</span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required>
+              <span class="error-msg">Valid email required</span>
+            </div>
           </div>
-          <div class="pn-checkbox">
-            <input type="checkbox" id="consent_perm" name="client_permission_acknowledged" required>
-            <label for="consent_perm">I understand that client permission is required before submitting any client information.</label>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required>
+              <span class="error-msg">Required</span>
+            </div>
+            <div class="form-group">
+              <label for="license_number">License Number <span class="req">*</span></label>
+              <input type="text" id="license_number" name="license_number" required>
+              <span class="error-msg">Required</span>
+            </div>
           </div>
-        </div>
+          <div class="form-group">
+            <label for="brokerage_name">Brokerage Name <span class="req">*</span></label>
+            <input type="text" id="brokerage_name" name="brokerage_name" required>
+            <span class="error-msg">Required</span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="broker_name">Broker / Office Manager Name <span class="req">*</span></label>
+              <input type="text" id="broker_name" name="broker_name" required>
+              <span class="error-msg">Required</span>
+            </div>
+            <div class="form-group">
+              <label for="broker_email">Broker / Office Manager Email <span class="req">*</span></label>
+              <input type="email" id="broker_email" name="broker_email" required>
+              <span class="error-msg">Valid email required</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service_area">Primary Service Area <span class="req">*</span></label>
+            <input type="text" id="service_area" name="service_area" required placeholder="e.g. Fort Myers, Cape Coral, Naples">
+            <span class="error-msg">Required</span>
+          </div>
+          <div class="form-group">
+            <label for="social_links">Instagram / LinkedIn / Website</label>
+            <input type="text" id="social_links" name="social_links" placeholder="Optional">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="monthly_volume">Monthly Buyer/Seller Volume</label>
+              <input type="text" id="monthly_volume" name="monthly_volume" placeholder="Approximate">
+            </div>
+            <div class="form-group">
+              <label for="client_resource_only">Using as free client resource only? <span class="req">*</span></label>
+              <select id="client_resource_only" name="client_resource_only" required>
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <span class="error-msg">Required</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="common_services">What services do your clients commonly ask for?</label>
+            <textarea id="common_services" name="common_services" placeholder="e.g. Moving, cleaning, junk removal, painting..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="interested_in_compensation">Interested in broker-approved referral compensation? <span class="req">*</span></label>
+            <select id="interested_in_compensation" name="interested_in_compensation" required>
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+              <option value="maybe">Maybe</option>
+            </select>
+            <span class="error-msg">Required</span>
+          </div>
 
-        <div class="pn-form-submit">
-          <button type="submit" class="btn btn-primary btn-full">Apply To Join The Network</button>
-        </div>
-      </form>
+          <div class="consent-group">
+            <div class="consent-item">
+              <input type="checkbox" id="consent_comp" name="compensation_acknowledged" required>
+              <label for="consent_comp">I understand that any referral compensation, if applicable, must be approved by and paid through my brokerage. TopRidge does not pay individual real estate agents directly.</label>
+            </div>
+            <div class="consent-item">
+              <input type="checkbox" id="consent_perm" name="client_permission_acknowledged" required>
+              <label for="consent_perm">I understand that client permission is required before submitting any client information through the network.</label>
+            </div>
+          </div>
 
-      <div class="pn-form-message" id="form-success">Your application has been submitted. TopRidge will review your information and follow up.</div>
-      <div class="pn-form-message" id="form-error">Something went wrong. Please try again or contact TopRidge directly.</div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary" style="width:100%; padding: 14px 28px;">Apply As A Real Estate Partner</button>
+          </div>
+        </form>
+
+        <div class="form-message" id="form-success">Your application has been submitted. TopRidge will review your information and follow up if your service area and client needs match the current network.</div>
+        <div class="form-message" id="form-error">Something went wrong while submitting your application. Please try again or contact TopRidge directly.</div>
+      </div>
     </div>
   </section>
 
@@ -149,6 +320,7 @@
             <li><a href="/operations">Operations</a></li>
             <li><a href="/consulting">Consulting</a></li>
             <li><a href="/press">Press</a></li>
+            <li><a href="/partner-network">Partner Network</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -156,7 +328,6 @@
           <ul>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/book-call">Book a Call</a></li>
-            <li><a href="/partner-network">Partner Network</a></li>
           </ul>
         </div>
       </div>
@@ -171,6 +342,53 @@
   </footer>
 
   <script src="../../main.js"></script>
-  <script src="../partner-network.js"></script>
+  <script>
+    (function() {
+      function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+      function validatePhone(p) { return p.replace(/\D/g,'').length >= 7; }
+
+      document.getElementById('partnerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = this;
+        var valid = true;
+
+        form.querySelectorAll('.form-group').forEach(function(g) { g.classList.remove('error'); });
+        document.querySelectorAll('.consent-item label').forEach(function(l) { l.style.color = ''; });
+
+        form.querySelectorAll('[required]').forEach(function(field) {
+          var group = field.closest('.form-group');
+          if (field.type === 'checkbox') {
+            if (!field.checked) {
+              var lbl = field.closest('.consent-item').querySelector('label');
+              if (lbl) lbl.style.color = '#dc2626';
+              valid = false;
+            }
+            return;
+          }
+          if (!group) return;
+          if (field.value.trim() === '') { group.classList.add('error'); valid = false; }
+        });
+
+        form.querySelectorAll('input[type="email"]').forEach(function(f) {
+          if (f.value && !validateEmail(f.value)) {
+            var g = f.closest('.form-group');
+            if (g) { g.classList.add('error'); valid = false; }
+          }
+        });
+
+        if (!valid) return;
+
+        var data = {};
+        new FormData(form).forEach(function(v, k) { data[k] = v; });
+        console.log('Partner Application:', data);
+
+        // TODO: POST to Supabase partner_applications table
+        // TODO: Send notification email
+
+        form.style.display = 'none';
+        document.getElementById('form-success').classList.add('show-success');
+      });
+    })();
+  </script>
 </body>
 </html>
