@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TopRidge Partner Portal</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../portal.css">
+  <link rel="stylesheet" href="../../partner-network/partner-network.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="/" class="nav-logo"><img src="../../logo.png" alt="TopRidge" class="logo-img"></a>
+      <div class="nav-links" id="navLinks">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a>
+          <div class="nav-dropdown-menu">
+            <a href="/growth">Growth</a>
+            <a href="/conversion">Conversion</a>
+            <a href="/operations">Operations</a>
+            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/press">Press</a>
+          </div>
+        </div>
+        <a href="/press">Press</a>
+        <a href="/#process">Process</a>
+        <a href="/partner-network">Partner Network</a>
+        <a href="https://www.top-ridge.com/contact" class="btn btn-sm">Start a Conversation</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="portal-page">
+    <div class="container">
+      <h1>TopRidge Partner Portal</h1>
+      <p class="portal-sub">Private access for approved TopRidge Partner Network real estate partners.</p>
+
+      <form class="portal-form" id="loginForm" onsubmit="event.preventDefault(); handlePortalLogin(this);">
+        <div class="pn-form-group">
+          <label for="partner-email">Approved Partner Email *</label>
+          <input type="email" id="partner-email" name="partner_email" required>
+        </div>
+        <div class="pn-form-group">
+          <label for="partner-code">Partner ID / Referral Code *</label>
+          <input type="text" id="partner-code" name="partner_code" required>
+        </div>
+        <div class="pn-form-submit">
+          <button type="submit" class="btn btn-primary btn-full">Continue To Submit Client Request</button>
+        </div>
+      </form>
+
+      <div class="portal-error-msg" id="portal-error">This portal is only available to approved TopRidge Partner Network partners. Please apply for access before submitting client requests.</div>
+
+      <div class="portal-link">Need to apply? <a href="/partner-network/apply">Apply here</a></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../../logo.png" alt="TopRidge" class="logo-img"></a>
+          <p class="footer-tagline">Building revenue systems that scale.</p>
+          <p class="footer-email"><a href="mailto:hello@top-ridge.com">hello@top-ridge.com</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/growth">Growth</a></li>
+            <li><a href="/conversion">Conversion</a></li>
+            <li><a href="/operations">Operations</a></li>
+            <li><a href="/consulting">Consulting / Strategy</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="https://www.top-ridge.com/contact">Contact Us</a></li>
+            <li><a href="https://www.top-ridge.com/book-call">Book a Call</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TopRidge Marketing. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script src="../portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply To Join The TopRidge Partner Network</title>
+  <meta name="description" content="Apply to join the TopRidge Partner Network as an approved real estate professional and give your clients access to vetted local home service vendors.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../partner-network.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="/" class="nav-logo"><img src="../../logo.png" alt="TopRidge" class="logo-img"></a>
+      <div class="nav-links" id="navLinks">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a>
+          <div class="nav-dropdown-menu">
+            <a href="/growth">Growth</a>
+            <a href="/conversion">Conversion</a>
+            <a href="/operations">Operations</a>
+            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/press">Press</a>
+          </div>
+        </div>
+        <a href="/press">Press</a>
+        <a href="/#process">Process</a>
+        <a href="/partner-network">Partner Network</a>
+        <a href="https://www.top-ridge.com/contact" class="btn btn-sm">Start a Conversation</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="pn-form-page">
+    <div class="container">
+      <h1>Apply To Join The TopRidge Partner Network</h1>
+      <p class="form-sub">Approved real estate professionals can use the TopRidge Partner Network as a private client resource for trusted moving, closing, and home service support.</p>
+
+      <form class="pn-form" id="partnerForm" onsubmit="event.preventDefault(); submitPartnerApplication(this);">
+        <div class="pn-form-group">
+          <label for="full_name">Full Name *</label>
+          <input type="text" id="full_name" name="full_name" required>
+          <span class="error-msg">Required</span>
+        </div>
+        <div class="pn-form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+          <span class="error-msg">Valid email required</span>
+        </div>
+        <div class="pn-form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required>
+          <span class="error-msg">Valid phone required</span>
+        </div>
+        <div class="pn-form-group">
+          <label for="brokerage_name">Brokerage Name *</label>
+          <input type="text" id="brokerage_name" name="brokerage_name" required>
+          <span class="error-msg">Required</span>
+        </div>
+        <div class="pn-form-group">
+          <label for="broker_name">Broker / Office Manager Name *</label>
+          <input type="text" id="broker_name" name="broker_name" required>
+          <span class="error-msg">Required</span>
+        </div>
+        <div class="pn-form-group">
+          <label for="broker_email">Broker / Office Manager Email *</label>
+          <input type="email" id="broker_email" name="broker_email" required>
+          <span class="error-msg">Valid email required</span>
+        </div>
+        <div class="pn-form-group">
+          <label for="license_number">License Number *</label>
+          <input type="text" id="license_number" name="license_number" required>
+          <span class="error-msg">Required</span>
+        </div>
+        <div class="pn-form-group">
+          <label for="service_area">Primary Service Area *</label>
+          <input type="text" id="service_area" name="service_area" required placeholder="e.g. Fort Myers, Cape Coral, Naples">
+          <span class="error-msg">Required</span>
+        </div>
+        <div class="pn-form-group">
+          <label for="social_links">Instagram / LinkedIn / Website</label>
+          <input type="text" id="social_links" name="social_links">
+        </div>
+        <div class="pn-form-group">
+          <label for="monthly_volume">Approximate Monthly Buyer/Seller Volume</label>
+          <input type="text" id="monthly_volume" name="monthly_volume">
+        </div>
+        <div class="pn-form-group">
+          <label for="common_services">What services do your clients commonly ask for?</label>
+          <textarea id="common_services" name="common_services" placeholder="e.g. Moving, cleaning, junk removal, painting..."></textarea>
+        </div>
+        <div class="pn-form-group">
+          <label for="client_resource_only">Are you interested in using this only as a free client resource? *</label>
+          <select id="client_resource_only" name="client_resource_only" required>
+            <option value="">Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <span class="error-msg">Required</span>
+        </div>
+        <div class="pn-form-group">
+          <label for="interested_in_compensation">Are you interested in broker-approved referral compensation? *</label>
+          <select id="interested_in_compensation" name="interested_in_compensation" required>
+            <option value="">Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="maybe">Maybe</option>
+          </select>
+          <span class="error-msg">Required</span>
+        </div>
+
+        <div style="margin-top: 28px;">
+          <div class="pn-checkbox">
+            <input type="checkbox" id="consent_comp" name="compensation_acknowledged" required>
+            <label for="consent_comp">I understand that any referral compensation, if applicable, must be approved by and paid through my brokerage. TopRidge does not pay individual real estate agents directly.</label>
+          </div>
+          <div class="pn-checkbox">
+            <input type="checkbox" id="consent_perm" name="client_permission_acknowledged" required>
+            <label for="consent_perm">I understand that client permission is required before submitting any client information through the network.</label>
+          </div>
+        </div>
+
+        <div class="pn-form-submit">
+          <button type="submit" class="btn btn-primary btn-full">Apply To Join The Network</button>
+        </div>
+      </form>
+
+      <div class="pn-form-message" id="form-success">Your application has been submitted. TopRidge will review your information and follow up if your service area and client needs match the current network.</div>
+      <div class="pn-form-message" id="form-error">Something went wrong while submitting your application. Please try again or contact TopRidge directly.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../../logo.png" alt="TopRidge" class="logo-img"></a>
+          <p class="footer-tagline">Building revenue systems that scale.</p>
+          <p class="footer-email"><a href="mailto:hello@top-ridge.com">hello@top-ridge.com</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/growth">Growth</a></li>
+            <li><a href="/conversion">Conversion</a></li>
+            <li><a href="/operations">Operations</a></li>
+            <li><a href="/consulting">Consulting / Strategy</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="https://www.top-ridge.com/contact">Contact Us</a></li>
+            <li><a href="https://www.top-ridge.com/book-call">Book a Call</a></li>
+            <li><a href="/partner-network">Partner Network</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TopRidge Marketing. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script src="../partner-network.js"></script>
+</body>
+</html>

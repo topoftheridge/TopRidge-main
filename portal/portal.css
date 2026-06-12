@@ -1,0 +1,47 @@
+/* ============================================
+   TopRidge Portal — Styles
+   ============================================ */
+
+.portal-page {
+  padding: 160px 0 80px;
+  min-height: 100vh;
+}
+.portal-page h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+.portal-page .portal-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.portal-form {
+  max-width: 480px;
+}
+
+.portal-error-msg {
+  display: none;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: var(--radius);
+  color: #991b1b;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+.portal-link {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.portal-link a {
+  color: var(--accent);
+  text-decoration: underline;
+}
