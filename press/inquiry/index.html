@@ -4,173 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TopRidge — Press Inquiry</title>
-  <meta name="description" content="Tell us about your press and visibility goals. We'll put together a plan that fits.">
+  <meta name="description" content="Tell us about your press and visibility goals.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <style>
-    .apply-section {
-      padding: 120px 0 80px;
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-    }
-    .apply-wrapper {
-      max-width: 620px;
-      width: 100%;
-      margin: 0 auto;
-    }
-    .apply-header {
-      margin-bottom: 40px;
-    }
-    .apply-header h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-    .apply-header p {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      margin-bottom: 6px;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      background: var(--bg-primary);
-      transition: border-color var(--transition), box-shadow var(--transition);
-      outline: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-dim);
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: var(--text-muted);
-    }
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    .form-group select {
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      padding-right: 36px;
-    }
-
-    .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
-    .checkbox-group label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 400;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      cursor: pointer;
-      padding: 8px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: border-color var(--transition), background var(--transition);
-    }
-    .checkbox-group label:hover {
-      border-color: var(--accent);
-    }
-    .checkbox-group input[type="checkbox"] {
-      width: auto;
-      padding: 0;
-      accent-color: var(--accent);
-    }
-    .checkbox-group input[type="checkbox"]:checked + span {
-      color: var(--text-primary);
-    }
-    .checkbox-group label:has(input:checked) {
-      border-color: var(--accent);
-      background: rgba(37, 99, 235, 0.04);
-    }
-
-    .form-error {
-      color: #dc2626;
-      font-size: 0.82rem;
-      margin-top: 4px;
-      display: none;
-    }
-
-    .form-actions {
-      margin-top: 32px;
-    }
-
-    /* Success state */
-    .success-state {
-      display: none;
-      text-align: center;
-      padding: 40px 0;
-      animation: fadeIn 0.4s ease;
-    }
-    .success-state.active {
-      display: block;
-    }
-    .success-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(34, 197, 94, 0.1);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .success-icon svg {
-      color: #22c55e;
-    }
-    .success-state h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-    .success-state p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .apply-section { padding: 120px 0 80px; min-height: 100vh; }
+    .apply-wrapper { max-width: 620px; width: 100%; margin: 0 auto; }
+    .apply-header { margin-bottom: 40px; }
+    .apply-header h1 { font-size: 2rem; font-weight: 600; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .apply-header p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+    .checkbox-group label { display: flex; align-items: center; gap: 8px; font-weight: 400; font-size: 0.9rem; color: var(--text-secondary); cursor: pointer; padding: 8px 14px; border: 1px solid var(--border); border-radius: var(--radius); transition: border-color var(--transition), background var(--transition); }
+    .checkbox-group label:hover { border-color: var(--accent); }
+    .checkbox-group input[type="checkbox"] { width: auto; padding: 0; accent-color: var(--accent); }
+    .checkbox-group label:has(input:checked) { border-color: var(--accent); background: rgba(37, 99, 235, 0.04); }
+    .form-actions { margin-top: 32px; }
+    .success-state { display: none; text-align: center; padding: 40px 0; animation: fadeIn 0.4s ease; }
+    .success-state.active { display: block; }
+    .success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(34, 197, 94, 0.1); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .success-icon svg { color: #22c55e; }
+    .success-state h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 10px; }
+    .success-state p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -184,17 +43,14 @@
             <a href="/growth">Growth</a>
             <a href="/conversion">Conversion</a>
             <a href="/operations">Operations</a>
-            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/consulting">Consulting</a>
             <a href="/press">Press</a>
           </div>
         </div>
-        <a href="/press">Press</a>
-        <a href="/#process">Process</a>
-        <a href="https://www.top-ridge.com/contact" class="btn btn-sm">Start a Conversation</a>
+        <a href="/partner-network">Partner Network</a>
+        <a href="/book-call" class="btn btn-sm btn-primary">Book a Call</a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span>
-      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span></button>
     </div>
   </nav>
 
@@ -203,7 +59,7 @@
       <div class="apply-wrapper">
         <div class="apply-header">
           <h1>Press Inquiry</h1>
-          <p>Tell us a bit about your brand and what you're looking for. We'll follow up with a plan that fits.</p>
+          <p>Tell us about your brand and what you're looking for. We'll follow up with a plan.</p>
         </div>
 
         <form id="pressForm" novalidate>
@@ -211,37 +67,30 @@
             <label for="fullName">Full Name *</label>
             <input type="text" id="fullName" placeholder="Your full name" required>
           </div>
-
           <div class="form-group">
             <label for="businessEmail">Business Email *</label>
             <input type="email" id="businessEmail" placeholder="you@company.com" required>
           </div>
-
           <div class="form-group">
             <label for="phone">Phone Number *</label>
             <input type="tel" id="phone" placeholder="(555) 123-4567" required>
           </div>
-
           <div class="form-group">
             <label for="companyName">Company Name *</label>
             <input type="text" id="companyName" placeholder="Your company name">
           </div>
-
           <div class="form-group">
             <label for="companyWebsite">Company Website</label>
             <input type="url" id="companyWebsite" placeholder="https://yourcompany.com">
           </div>
-
           <div class="form-group">
-            <label for="role">Your Role in the Company *</label>
+            <label for="role">Your Role *</label>
             <input type="text" id="role" placeholder="e.g. Founder, Marketing Director, CEO">
           </div>
-
           <div class="form-group">
             <label for="announce">What are you looking to announce or promote? *</label>
             <textarea id="announce" placeholder="Tell us about what you'd like coverage for..."></textarea>
           </div>
-
           <div class="form-group">
             <label>What is your main goal? *</label>
             <div class="checkbox-group" id="goalsGroup">
@@ -253,7 +102,6 @@
               <label><input type="checkbox" name="goal" value="Other"><span>Other</span></label>
             </div>
           </div>
-
           <div class="form-group">
             <label for="budget">Estimated Investment Range *</label>
             <select id="budget" required>
@@ -263,7 +111,6 @@
               <option value="$5k+">$5k+</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="timeline">When are you looking to get started? *</label>
             <select id="timeline" required>
@@ -274,41 +121,34 @@
               <option value="Just exploring">Just exploring</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="anything">Anything else we should know?</label>
-            <textarea id="anything" placeholder="Any additional details, links, or context..."></textarea>
+            <textarea id="anything" placeholder="Any additional details..."></textarea>
           </div>
-
-          <div class="form-error" id="formError">Please fill out all required fields with valid info (valid email and 10-digit phone number).</div>
-
+          <div class="form-error" id="formError" style="display:none;">Please fill out all required fields with valid info.</div>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitBtn">Submit Inquiry →</button>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Submit Inquiry →</button>
           </div>
         </form>
 
-        <!-- Success state -->
         <div class="success-state" id="successState">
           <div class="success-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12l5 5L20 7"/>
-            </svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
           </div>
           <h2>Inquiry received.</h2>
           <p>Next step is to book a quick call. The scheduling window should appear momentarily.</p>
           <p style="margin-top: 12px;"><a href="#" id="calendlyFallback" style="color: var(--accent); text-decoration: underline;">If it doesn't, click here to continue.</a></p>
         </div>
-
       </div>
     </div>
   </section>
 
-    <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/"><img src="../../logo.png" alt="TopRidge" class="logo-img"></a>
-          <p class="footer-tagline">Building revenue systems that scale.</p>
+          <p class="footer-tagline">Revenue systems that scale.</p>
           <p class="footer-email"><a href="mailto:hello@top-ridge.com">hello@top-ridge.com</a></p>
         </div>
         <div class="footer-col">
@@ -317,15 +157,16 @@
             <li><a href="/growth">Growth</a></li>
             <li><a href="/conversion">Conversion</a></li>
             <li><a href="/operations">Operations</a></li>
-            <li><a href="/consulting">Consulting / Strategy</a></li>
+            <li><a href="/consulting">Consulting</a></li>
             <li><a href="/press">Press</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="https://www.top-ridge.com/contact">Contact Us</a></li>
-            <li><a href="https://www.top-ridge.com/book-call">Book a Call</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/book-call">Book a Call</a></li>
+            <li><a href="/partner-network">Partner Network</a></li>
           </ul>
         </div>
       </div>
@@ -342,9 +183,7 @@
   <script>
     function openCalendly() {
       if (typeof Calendly !== 'undefined') {
-        Calendly.initPopupWidget({
-          url: 'https://calendly.com/topridge/topridge-press-call?hide_event_type_details=1&hide_gdpr_banner=1'
-        });
+        Calendly.initPopupWidget({ url: 'https://calendly.com/topridge/topridge-press-call?hide_event_type_details=1&hide_gdpr_banner=1' });
       }
     }
 
@@ -363,64 +202,31 @@
       var anything = document.getElementById('anything').value.trim();
 
       var goals = [];
-      document.querySelectorAll('input[name="goal"]:checked').forEach(function(cb) {
-        goals.push(cb.value);
-      });
+      document.querySelectorAll('input[name="goal"]:checked').forEach(function(cb) { goals.push(cb.value); });
 
-      // Validate required
       var valid = true;
-      if (!fullName || !email || !phone || !company || !role || !announce || !budget || !timeline || goals.length === 0) {
-        valid = false;
-      }
+      if (!fullName || !email || !phone || !company || !role || !announce || !budget || !timeline || goals.length === 0) valid = false;
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) valid = false;
+      if (phone.replace(/\D/g, '').length < 10) valid = false;
 
-      // Validate email format
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        valid = false;
-      }
-
-      // Validate phone (10 digits)
-      var phoneDigits = phone.replace(/\D/g, '');
-      if (phoneDigits.length < 10) {
-        valid = false;
-      }
-
-      if (!valid) {
-        document.getElementById('formError').style.display = 'block';
-        return;
-      }
+      if (!valid) { document.getElementById('formError').style.display = 'block'; return; }
       document.getElementById('formError').style.display = 'none';
 
       var formData = {
-        fullName: fullName,
-        businessEmail: email,
-        phone: phone,
-        companyName: company,
-        companyWebsite: website,
-        role: role,
-        announce: announce,
-        goals: goals.join(', '),
-        budget: budget,
-        timeline: timeline,
-        anything: anything,
-        source: 'TopRidge Press Inquiry'
+        fullName: fullName, businessEmail: email, phone: phone, companyName: company,
+        companyWebsite: website, role: role, announce: announce, goals: goals.join(', '),
+        budget: budget, timeline: timeline, anything: anything, source: 'TopRidge Press Inquiry'
       };
 
       var submitBtn = document.getElementById('submitBtn');
       submitBtn.textContent = 'Submitting...';
       submitBtn.disabled = true;
 
-      // WEBHOOK_URL placeholder — replace with your Google Apps Script Web App URL
       var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzHuXIYs0TvX6l32km7U77jmYw3fAKvA7jHGTD31XZuIUiuQd0VFzTg2k3QU9nUDPTKjA/exec';
 
-      fetch(WEBHOOK_URL, {
-        method: 'POST',
-        body: JSON.stringify(formData)
-      }).then(function() {
-        showSuccess();
-      }).catch(function(err) {
-        console.warn('Webhook response issue:', err);
-        showSuccess();
-      });
+      fetch(WEBHOOK_URL, { method: 'POST', body: JSON.stringify(formData) })
+        .then(function() { showSuccess(); })
+        .catch(function(err) { console.warn('Webhook response issue:', err); showSuccess(); });
     });
 
     function showSuccess() {
@@ -433,12 +239,7 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       var fallback = document.getElementById('calendlyFallback');
-      if (fallback) {
-        fallback.addEventListener('click', function(e) {
-          e.preventDefault();
-          openCalendly();
-        });
-      }
+      if (fallback) { fallback.addEventListener('click', function(e) { e.preventDefault(); openCalendly(); }); }
     });
   </script>
 </body>

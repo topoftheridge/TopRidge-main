@@ -7,50 +7,17 @@
   <meta name="description" content="Payment confirmed. Pick a time for your strategy session.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
   <style>
-    .success-section {
-      padding: 120px 0 80px;
-      min-height: 100vh;
-    }
-    .success-wrapper {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .success-header {
-      margin-bottom: 40px;
-    }
-    .success-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(34, 197, 94, 0.1);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .success-icon svg {
-      color: #22c55e;
-    }
-    .success-header h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-    .success-header p {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-    .calendly-container {
-      margin-top: 20px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
+    .success-section { padding: 120px 0 80px; min-height: 100vh; }
+    .success-wrapper { max-width: 720px; margin: 0 auto; text-align: center; }
+    .success-header { margin-bottom: 40px; }
+    .success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(34, 197, 94, 0.1); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .success-icon svg { color: #22c55e; }
+    .success-header h1 { font-size: 2rem; font-weight: 600; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .success-header p { color: var(--text-secondary); font-size: 1.05rem; }
+    .calendly-container { margin-top: 20px; border-radius: var(--radius-lg); overflow: hidden; }
   </style>
 </head>
 <body>
@@ -64,17 +31,14 @@
             <a href="/growth">Growth</a>
             <a href="/conversion">Conversion</a>
             <a href="/operations">Operations</a>
-            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/consulting">Consulting</a>
             <a href="/press">Press</a>
           </div>
         </div>
-        <a href="/press">Press</a>
-        <a href="/#process">Process</a>
-        <a href="https://www.top-ridge.com/contact" class="btn btn-sm">Start a Conversation</a>
+        <a href="/partner-network">Partner Network</a>
+        <a href="/book-call" class="btn btn-sm btn-primary">Book a Call</a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span>
-      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span></button>
     </div>
   </nav>
 
@@ -83,29 +47,25 @@
       <div class="success-wrapper">
         <div class="success-header">
           <div class="success-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12l5 5L20 7"/>
-            </svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
           </div>
           <h1>Payment confirmed. Pick a time.</h1>
-          <p>You're all set — just choose a time below that works for you and we'll see you there.</p>
+          <p>You're all set — choose a time below that works for you.</p>
         </div>
         <div class="calendly-container">
-          <!-- Calendly inline widget begin -->
           <div class="calendly-inline-widget" data-url="https://calendly.com/topridge/topridge-strategy-call-1hr?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
           <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-          <!-- Calendly inline widget end -->
         </div>
       </div>
     </div>
   </section>
 
-    <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/"><img src="../../logo.png" alt="TopRidge" class="logo-img"></a>
-          <p class="footer-tagline">Building revenue systems that scale.</p>
+          <p class="footer-tagline">Revenue systems that scale.</p>
           <p class="footer-email"><a href="mailto:hello@top-ridge.com">hello@top-ridge.com</a></p>
         </div>
         <div class="footer-col">
@@ -114,15 +74,16 @@
             <li><a href="/growth">Growth</a></li>
             <li><a href="/conversion">Conversion</a></li>
             <li><a href="/operations">Operations</a></li>
-            <li><a href="/consulting">Consulting / Strategy</a></li>
+            <li><a href="/consulting">Consulting</a></li>
             <li><a href="/press">Press</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="https://www.top-ridge.com/contact">Contact Us</a></li>
-            <li><a href="https://www.top-ridge.com/book-call">Book a Call</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/book-call">Book a Call</a></li>
+            <li><a href="/partner-network">Partner Network</a></li>
           </ul>
         </div>
       </div>

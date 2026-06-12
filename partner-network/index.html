@@ -4,67 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TopRidge Partner Network — Trusted Vendor Network For Real Estate Professionals</title>
-  <meta name="description" content="TopRidge Partner Network connects approved real estate professionals with vetted local movers, cleaners, painters, and other trusted home service providers during the closing and moving process.">
+  <meta name="description" content="TopRidge Partner Network connects approved real estate professionals with vetted local home service providers.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="partner-network.css">
   <link rel="icon" href="../favicon.ico">
-  <style>
-    .pn-hero { padding: 140px 0 80px; background: var(--bg-secondary); border-bottom: 1px solid var(--border); }
-    .pn-hero h1 { font-size: 2.8rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; max-width: 800px; }
-    .pn-hero-sub { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; max-width: 720px; margin-bottom: 32px; }
-    .pn-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
-    .pn-trust { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.02em; }
-    .pn-section { padding: 80px 0; }
-    .pn-section:nth-child(even) { background: var(--bg-secondary); }
-    .pn-section-header { margin-bottom: 48px; }
-    .pn-section-header h2 { font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 16px; }
-    .pn-section-header p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; max-width: 680px; }
-    .pn-callout { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px 28px; margin-top: 32px; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; font-weight: 500; }
-    .pn-cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .pn-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 28px; }
-    .pn-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 12px; }
-    .pn-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
-    .pn-services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
-    .pn-service-card { background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
-    .pn-service-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
-    .pn-service-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
-    .pn-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .pn-step-num { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); font-weight: 500; margin-bottom: 12px; letter-spacing: 0.05em; }
-    .pn-step h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
-    .pn-step p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
-    .pn-benefits { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
-    .pn-benefit { display: flex; align-items: flex-start; gap: 12px; padding: 16px 20px; background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius); }
-    .pn-benefit-icon { flex-shrink: 0; width: 20px; height: 20px; color: var(--accent); margin-top: 2px; }
-    .pn-benefit span { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; }
-    .pn-cta-section { text-align: center; padding: 64px 0; }
-    .pn-cta-section h2 { font-size: 1.8rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px; }
-    .pn-cta-section p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; max-width: 600px; margin: 0 auto 28px; }
-    .pn-cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .pn-faq-list { max-width: 720px; }
-    .pn-faq-item { border-bottom: 1px solid var(--border); }
-    .pn-faq-q { width: 100%; background: none; border: none; padding: 20px 0; font-family: var(--font-sans); font-size: 1rem; font-weight: 500; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-align: left; }
-    .pn-faq-q svg { flex-shrink: 0; transition: transform 0.2s; }
-    .pn-faq-item.open .pn-faq-q svg { transform: rotate(180deg); }
-    .pn-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .pn-faq-item.open .pn-faq-a { max-height: 400px; }
-    .pn-faq-a p { padding: 0 0 20px; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
-    .pn-compliance { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; }
-    .pn-compliance h3 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 16px; }
-    .pn-compliance p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
-    @media (max-width: 768px) {
-      .pn-hero h1 { font-size: 2rem; }
-      .pn-cards-3 { grid-template-columns: 1fr; }
-      .pn-steps { grid-template-columns: 1fr 1fr; }
-      .pn-benefits { grid-template-columns: 1fr; }
-      .pn-services-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 480px) {
-      .pn-steps { grid-template-columns: 1fr; }
-      .pn-hero-actions { flex-direction: column; }
-    }
-  </style>
 </head>
 <body>
 
@@ -78,13 +24,12 @@
             <a href="/growth">Growth</a>
             <a href="/conversion">Conversion</a>
             <a href="/operations">Operations</a>
-            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/consulting">Consulting</a>
             <a href="/press">Press</a>
           </div>
         </div>
         <a href="/partner-network">Partner Network</a>
-        <a href="/press">Press</a>
-        <a href="https://www.top-ridge.com/contact" class="btn btn-sm">Start a Conversation</a>
+        <a href="/book-call" class="btn btn-sm btn-primary">Book a Call</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span></button>
     </div>
@@ -93,8 +38,8 @@
   <!-- 1. HERO -->
   <section class="pn-hero">
     <div class="container">
-      <h1>A Trusted Vendor Network For Real Estate Professionals, Buyers, And Sellers</h1>
-      <p class="pn-hero-sub">TopRidge Partner Network helps approved real estate professionals connect their clients with vetted local movers, cleaners, junk removal crews, painters, flooring installers, locksmiths, landscapers, pool service companies, and other trusted home service providers during the closing and moving process.</p>
+      <h1>A Trusted Vendor Network For Real Estate Professionals</h1>
+      <p class="pn-hero-sub">Connect your clients with vetted local movers, cleaners, painters, and other trusted home service providers during the closing and moving process.</p>
       <div class="pn-hero-actions">
         <a href="/partner-network/apply" class="btn btn-primary">Apply To Join The Network</a>
         <a href="/partner-network/vendor-apply" class="btn btn-ghost">Apply As A Vendor Partner</a>
@@ -107,11 +52,10 @@
   <section class="pn-section">
     <div class="container">
       <div class="pn-section-header">
-        <h2>A Client-First Partner Network Built Around Real Estate Relationships</h2>
-        <p>Buying or selling a home creates dozens of moving parts — literally. Clients need movers, cleaners, junk removal, painters, locksmiths, and more, often within a tight timeline around closing.</p>
-        <p style="margin-top: 12px;">The TopRidge Partner Network gives approved real estate professionals a private way to submit client service requests. TopRidge reviews each request and routes it to vetted local vendors who have been screened for quality, responsiveness, and professionalism.</p>
+        <h2>A Client-First Partner Network</h2>
+        <p>Approved real estate professionals submit client service requests. TopRidge reviews each request and routes it to vetted local vendors screened for quality and professionalism.</p>
       </div>
-      <div class="pn-callout">This is not an open public lead form. The network is private and application-based to protect clients, agents, vendors, and the TopRidge brand.</div>
+      <div class="pn-callout">This is not an open public lead form. The network is private and application-based.</div>
     </div>
   </section>
 
@@ -122,15 +66,15 @@
       <div class="pn-cards-3">
         <div class="pn-card">
           <h3>Real Estate Professionals</h3>
-          <p>Offer your clients a curated resource for trusted home services around closing — without personally vetting every vendor yourself. Submit a request through the private portal, and TopRidge handles the coordination with pre-screened local providers.</p>
+          <p>Offer clients a curated resource for trusted home services around closing — without personally vetting every vendor.</p>
         </div>
         <div class="pn-card">
           <h3>Clients (Buyers &amp; Sellers)</h3>
-          <p>Get connected with vetted, reliable home service providers recommended through your real estate professional. No cold-calling strangers, no guessing who to trust. Your agent submits a request on your behalf, and you receive qualified help during a stressful time.</p>
+          <p>Get connected with vetted, reliable providers recommended through your agent. No cold-calling strangers.</p>
         </div>
         <div class="pn-card">
           <h3>Vendors &amp; Service Providers</h3>
-          <p>Get access to qualified, real-time client requests from approved real estate professionals — without paying for ads or chasing leads. Vetted vendors in the TopRidge network receive warm introductions from trusted agent partners who have already confirmed client permission.</p>
+          <p>Receive qualified, real-time client requests from approved real estate professionals — without paying for ads.</p>
         </div>
       </div>
     </div>
@@ -140,20 +84,19 @@
   <section class="pn-section">
     <div class="container">
       <div class="pn-section-header">
-        <h2>Home Services Commonly Needed Around Closing</h2>
-        <p>The TopRidge Partner Network covers a range of services that real estate clients typically need during the buying, selling, or moving process.</p>
+        <h2>Services Commonly Needed Around Closing</h2>
       </div>
       <div class="pn-services-grid">
-        <div class="pn-service-card"><h3>Local Moving</h3><p>Licensed and insured local movers for residential moves within the area, including loading, transport, and unloading.</p></div>
-        <div class="pn-service-card"><h3>Packing Help</h3><p>Professional packing assistance for clients who need help preparing belongings for a move, including fragile and specialty items.</p></div>
-        <div class="pn-service-card"><h3>Junk Removal</h3><p>Removal of unwanted furniture, appliances, debris, and household items before or after a move.</p></div>
-        <div class="pn-service-card"><h3>Move-In / Move-Out Cleaning</h3><p>Deep cleaning services for properties being vacated or prepared for new occupants, including kitchens, bathrooms, and floors.</p></div>
-        <div class="pn-service-card"><h3>Interior Painting</h3><p>Touch-up or full-room interior painting to refresh a property before listing or after move-in.</p></div>
-        <div class="pn-service-card"><h3>Flooring / Carpet</h3><p>Carpet cleaning, replacement, hardwood refinishing, or new flooring installation to prepare a property for sale or move-in.</p></div>
-        <div class="pn-service-card"><h3>Locksmiths</h3><p>Lock rekeying, replacement, or smart lock installation for new homeowners or sellers preparing a property.</p></div>
-        <div class="pn-service-card"><h3>Landscaping</h3><p>Lawn care, yard cleanup, trimming, and basic landscaping to improve curb appeal before listing or after purchase.</p></div>
-        <div class="pn-service-card"><h3>Pool Service</h3><p>Pool cleaning, maintenance, inspection support, and opening or closing services for properties with pools.</p></div>
-        <div class="pn-service-card"><h3>Other Home Services</h3><p>Additional services requested by clients or agents, including handyman work, pressure washing, window cleaning, and more.</p></div>
+        <div class="pn-service-card"><h3>Local Moving</h3><p>Licensed local movers for residential moves.</p></div>
+        <div class="pn-service-card"><h3>Packing Help</h3><p>Professional packing assistance including fragile items.</p></div>
+        <div class="pn-service-card"><h3>Junk Removal</h3><p>Removal of unwanted furniture, appliances, and debris.</p></div>
+        <div class="pn-service-card"><h3>Move-In / Move-Out Cleaning</h3><p>Deep cleaning for properties being vacated or prepared.</p></div>
+        <div class="pn-service-card"><h3>Interior Painting</h3><p>Touch-up or full-room painting to refresh a property.</p></div>
+        <div class="pn-service-card"><h3>Flooring / Carpet</h3><p>Carpet cleaning, replacement, or hardwood refinishing.</p></div>
+        <div class="pn-service-card"><h3>Locksmiths</h3><p>Lock rekeying, replacement, or smart lock installation.</p></div>
+        <div class="pn-service-card"><h3>Landscaping</h3><p>Lawn care, yard cleanup, and curb appeal improvements.</p></div>
+        <div class="pn-service-card"><h3>Pool Service</h3><p>Pool cleaning, maintenance, and seasonal services.</p></div>
+        <div class="pn-service-card"><h3>Other Home Services</h3><p>Handyman work, pressure washing, window cleaning, and more.</p></div>
       </div>
     </div>
   </section>
@@ -163,13 +106,13 @@
     <div class="container">
       <div class="pn-section-header">
         <h2>How The Partner Network Works</h2>
-        <p>A simple, private process designed to protect clients, agents, and vendors at every step.</p>
+        <p>A simple, private process designed to protect clients, agents, and vendors.</p>
       </div>
       <div class="pn-steps">
-        <div class="pn-step"><div class="pn-step-num">01</div><h3>Apply &amp; Get Approved</h3><p>Real estate professionals submit an application. TopRidge reviews each application and approves qualified partners based on licensing, brokerage affiliation, and professional standing.</p></div>
-        <div class="pn-step"><div class="pn-step-num">02</div><h3>Submit A Client Request</h3><p>Approved partners use a private portal to submit service requests on behalf of their clients. Each request includes client permission confirmation, service details, and timeline information.</p></div>
-        <div class="pn-step"><div class="pn-step-num">03</div><h3>TopRidge Routes The Request</h3><p>TopRidge reviews the request and matches it with a vetted local vendor from the network based on service type, location, availability, and quality standards.</p></div>
-        <div class="pn-step"><div class="pn-step-num">04</div><h3>Client Gets Connected</h3><p>The client receives a warm introduction to the matched vendor. The vendor reaches out directly to coordinate scheduling, pricing, and project details.</p></div>
+        <div class="pn-step"><div class="pn-step-num">01</div><h3>Apply &amp; Get Approved</h3><p>TopRidge reviews each application based on licensing and professional standing.</p></div>
+        <div class="pn-step"><div class="pn-step-num">02</div><h3>Submit A Client Request</h3><p>Use a private portal to submit service requests with client permission.</p></div>
+        <div class="pn-step"><div class="pn-step-num">03</div><h3>TopRidge Routes It</h3><p>We match the request with a vetted local vendor from the network.</p></div>
+        <div class="pn-step"><div class="pn-step-num">04</div><h3>Client Gets Connected</h3><p>The vendor reaches out directly to coordinate scheduling and details.</p></div>
       </div>
     </div>
   </section>
@@ -178,17 +121,16 @@
   <section class="pn-section">
     <div class="container">
       <div class="pn-section-header">
-        <h2>Built To Protect The Relationship, Not Risk It</h2>
-        <p>A bad vendor referral can damage the trust you've spent months building with a client. The TopRidge Partner Network exists to make sure every recommendation reflects well on you, your brokerage, and your reputation.</p>
+        <h2>Built To Protect The Relationship</h2>
+        <p>Every recommendation reflects well on you, your brokerage, and your reputation.</p>
       </div>
       <div class="pn-benefits">
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Every vendor is vetted for licensing, insurance, reviews, and responsiveness before being added to the network.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Client permission is required before any request is submitted — no unsolicited contact, ever.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>You don't have to personally vet every mover, cleaner, or painter — TopRidge manages the vendor relationships.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Requests are submitted through a private portal — not a public form that anyone can access.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Free to use as a client resource — there is no cost to agents or clients for submitting service requests.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Strengthens your post-closing relationship by being the person who connected your client with help they actually needed.</span></div>
-        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Optional broker-approved referral compensation may be available — always disclosed, always routed through your brokerage.</span></div>
+        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Every vendor vetted for licensing, insurance, reviews, and responsiveness.</span></div>
+        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Client permission required — no unsolicited contact, ever.</span></div>
+        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>TopRidge manages vendor relationships — you don't have to.</span></div>
+        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Private portal — not a public form anyone can access.</span></div>
+        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Free for agents and clients to use.</span></div>
+        <div class="pn-benefit"><svg class="pn-benefit-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Strengthens your post-closing client relationship.</span></div>
       </div>
     </div>
   </section>
@@ -198,7 +140,7 @@
     <div class="container">
       <div class="pn-cta-section">
         <h2>Apply As A Real Estate Partner</h2>
-        <p>Licensed real estate professionals can apply to join the TopRidge Partner Network and gain access to the private client service request portal. Applications are reviewed individually.</p>
+        <p>Licensed professionals can apply and gain access to the private client service request portal.</p>
         <div class="pn-cta-actions"><a href="/partner-network/apply" class="btn btn-primary">Apply To Join The Network</a></div>
       </div>
     </div>
@@ -209,7 +151,7 @@
     <div class="container">
       <div class="pn-cta-section">
         <h2>Apply As A Vendor Partner</h2>
-        <p>Local home service providers can apply to join the TopRidge Partner Network as a vetted vendor. Approved vendors receive qualified client requests from trusted real estate professionals in their service area.</p>
+        <p>Local home service providers can apply to receive qualified client requests from trusted real estate professionals.</p>
         <div class="pn-cta-actions"><a href="/partner-network/vendor-apply" class="btn btn-primary">Apply As A Vendor Partner</a></div>
       </div>
     </div>
@@ -221,45 +163,45 @@
       <div class="pn-section-header"><h2>Frequently Asked Questions</h2></div>
       <div class="pn-faq-list">
         <div class="pn-faq-item">
-          <button class="pn-faq-q">Is there a cost for real estate professionals to use the network? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>No. The TopRidge Partner Network is free for approved real estate professionals to use as a client resource. There is no subscription, fee, or cost to submit service requests on behalf of your clients.</p></div>
+          <button class="pn-faq-q">Is there a cost for real estate professionals? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
+          <div class="pn-faq-a"><p>No. The network is free for approved professionals. No subscription or fee to submit service requests.</p></div>
         </div>
         <div class="pn-faq-item">
           <button class="pn-faq-q">How are vendors vetted? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>Every vendor in the network goes through a review process that includes verification of licensing, insurance, online reviews, response time, and professional reputation. TopRidge maintains quality standards and may remove vendors who do not meet expectations.</p></div>
+          <div class="pn-faq-a"><p>Every vendor goes through verification of licensing, insurance, online reviews, response time, and reputation.</p></div>
         </div>
         <div class="pn-faq-item">
           <button class="pn-faq-q">Do clients know I submitted a request? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>Yes. Client permission is required before any request is submitted. The client will know their agent recommended the service, and the vendor will identify the referral source when reaching out. Transparency is a core requirement of the network.</p></div>
+          <div class="pn-faq-a"><p>Yes. Client permission is required before any request is submitted. Transparency is a core requirement.</p></div>
         </div>
         <div class="pn-faq-item">
-          <button class="pn-faq-q">Is there referral compensation for agents? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>Some vendor relationships may include optional referral compensation for approved partners. Any compensation is fully disclosed, must be approved by the agent's brokerage, and is routed through proper brokerage channels. Compensation is never automatic and is never the primary purpose of the network. The network is designed first as a free client resource.</p></div>
+          <button class="pn-faq-q">Is there referral compensation? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
+          <div class="pn-faq-a"><p>Some vendor relationships may include optional compensation, always disclosed and routed through your brokerage. Never automatic or the primary purpose.</p></div>
         </div>
         <div class="pn-faq-item">
           <button class="pn-faq-q">Who can apply? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>Licensed real estate professionals with an active brokerage affiliation can apply as agent partners. Local home service companies with verifiable licensing, insurance, and positive reviews can apply as vendor partners. All applications are reviewed individually.</p></div>
+          <div class="pn-faq-a"><p>Licensed real estate professionals with active brokerage affiliation, and local home service companies with verifiable licensing and insurance.</p></div>
         </div>
         <div class="pn-faq-item">
           <button class="pn-faq-q">What happens after I apply? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>TopRidge reviews every application individually. If approved, you'll receive an email with your Partner ID and instructions for accessing the private client request portal. The review process typically takes a few business days.</p></div>
+          <div class="pn-faq-a"><p>TopRidge reviews every application individually. If approved, you'll receive your Partner ID and portal access within a few business days.</p></div>
         </div>
         <div class="pn-faq-item">
           <button class="pn-faq-q">Can I choose which vendors my clients work with? <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1.5l5 5 5-5"/></svg></button>
-          <div class="pn-faq-a"><p>TopRidge handles vendor matching based on service type, location, and availability. You submit the request and TopRidge connects your client with the best available vetted provider. If a client or agent has a preference, that can be noted in the request.</p></div>
+          <div class="pn-faq-a"><p>TopRidge handles vendor matching. Preferences can be noted in the request.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 10. COMPLIANCE / DISCLAIMER -->
+  <!-- 10. COMPLIANCE -->
   <section class="pn-section">
     <div class="container">
       <div class="pn-compliance">
         <h3>Compliance &amp; Disclaimer</h3>
-        <p>The TopRidge Partner Network is a private, application-based vendor coordination service. It is not a licensed referral service, brokerage, or real estate entity. TopRidge does not guarantee vendor performance, pricing, or availability. All vendor relationships are independent, and TopRidge is not a party to any agreement between a client and a vendor.</p>
-        <p style="margin-top: 12px;">Any referral compensation offered to approved real estate professionals must be disclosed to all parties, approved by the agent's brokerage, and routed through proper brokerage channels in accordance with all applicable state and federal regulations, including RESPA. Compensation is never automatic, never guaranteed, and never a condition of participation in the network.</p>
-        <p style="margin-top: 12px;">Client permission is required before any service request is submitted. No client information is shared without explicit consent. TopRidge reserves the right to approve, deny, or revoke access to the network at any time and for any reason.</p>
+        <p>The TopRidge Partner Network is a private, application-based vendor coordination service. It is not a licensed referral service, brokerage, or real estate entity. TopRidge does not guarantee vendor performance, pricing, or availability.</p>
+        <p style="margin-top: 12px;">Any referral compensation must be disclosed, approved by the agent's brokerage, and routed through proper channels in accordance with all applicable regulations including RESPA.</p>
+        <p style="margin-top: 12px;">Client permission is required before any service request is submitted. TopRidge reserves the right to approve, deny, or revoke access at any time.</p>
       </div>
     </div>
   </section>
@@ -269,7 +211,7 @@
     <div class="container">
       <div class="pn-cta-section">
         <h2>Join The TopRidge Partner Network</h2>
-        <p>Whether you're a real estate professional looking for a trusted client resource, or a home service provider looking for qualified local work — we'd like to hear from you.</p>
+        <p>Whether you're a real estate professional or a home service provider — we'd like to hear from you.</p>
         <div class="pn-cta-actions">
           <a href="/partner-network/apply" class="btn btn-primary">Apply As A Real Estate Partner</a>
           <a href="/partner-network/vendor-apply" class="btn btn-ghost">Apply As A Vendor Partner</a>
@@ -278,13 +220,12 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/"><img src="../logo.png" alt="TopRidge" class="logo-img"></a>
-          <p class="footer-tagline">Building revenue systems that scale.</p>
+          <p class="footer-tagline">Revenue systems that scale.</p>
           <p class="footer-email"><a href="mailto:hello@top-ridge.com">hello@top-ridge.com</a></p>
         </div>
         <div class="footer-col">
@@ -293,7 +234,7 @@
             <li><a href="/growth">Growth</a></li>
             <li><a href="/conversion">Conversion</a></li>
             <li><a href="/operations">Operations</a></li>
-            <li><a href="/consulting">Consulting / Strategy</a></li>
+            <li><a href="/consulting">Consulting</a></li>
             <li><a href="/press">Press</a></li>
             <li><a href="/partner-network">Partner Network</a></li>
           </ul>
@@ -301,8 +242,8 @@
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="https://www.top-ridge.com/contact">Contact Us</a></li>
-            <li><a href="https://www.top-ridge.com/book-call">Book a Call</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/book-call">Book a Call</a></li>
           </ul>
         </div>
       </div>
@@ -315,17 +256,7 @@
       </div>
     </div>
   </footer>
-
   <script src="../main.js"></script>
-  <script>
-    document.querySelectorAll('.pn-faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.pn-faq-item').forEach(i => i.classList.remove('open'));
-        if (!wasOpen) item.classList.add('open');
-      });
-    });
-  </script>
+  <script src="partner-network.js"></script>
 </body>
 </html>

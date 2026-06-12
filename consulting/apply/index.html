@@ -4,171 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TopRidge — Apply for Ongoing Advisory</title>
-  <meta name="description" content="Apply for ongoing advisory with TopRidge. Answer a few questions so we can understand where you're at.">
+  <meta name="description" content="Apply for ongoing advisory with TopRidge.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <style>
-    .apply-section {
-      padding: 120px 0 80px;
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-    }
-    .apply-wrapper {
-      max-width: 620px;
-      width: 100%;
-      margin: 0 auto;
-    }
-    .apply-header {
-      margin-bottom: 40px;
-    }
-    .apply-header h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-    .apply-header p {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-
-    /* Progress bar */
-    .progress-bar {
-      width: 100%;
-      height: 4px;
-      background: var(--bg-card);
-      border-radius: 2px;
-      margin-bottom: 40px;
-      overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%;
-      background: var(--accent);
-      border-radius: 2px;
-      transition: width 0.4s ease;
-      width: 20%;
-    }
-    .progress-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    /* Steps */
-    .step {
-      display: none;
-      animation: fadeIn 0.3s ease;
-    }
-    .step.active {
-      display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .step-question {
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-
-    .step textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      background: var(--bg-primary);
-      transition: border-color var(--transition), box-shadow var(--transition);
-      outline: none;
-      resize: vertical;
-      min-height: 120px;
-    }
-    .step textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-dim);
-    }
-    .step textarea::placeholder {
-      color: var(--text-muted);
-    }
-
-    .step-error {
-      color: #dc2626;
-      font-size: 0.85rem;
-      margin-top: 8px;
-      display: none;
-    }
-    .step.error .step-error {
-      display: block;
-    }
-    .step.error textarea {
-      border-color: #dc2626;
-    }
-
-    .step-actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .step-actions .btn {
-      flex: 1;
-    }
-    .btn-back {
-      background: var(--bg-card);
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-    }
-    .btn-back:hover {
-      background: var(--bg-card-hover);
-    }
-
-    /* Success state */
-    .success-state {
-      display: none;
-      text-align: center;
-      padding: 40px 0;
-      animation: fadeIn 0.4s ease;
-    }
-    .success-state.active {
-      display: block;
-    }
-    .success-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(34, 197, 94, 0.1);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .success-icon svg {
-      color: #22c55e;
-    }
-    .success-state h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-    .success-state p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+    .apply-section { padding: 120px 0 80px; min-height: 100vh; }
+    .apply-wrapper { max-width: 620px; width: 100%; margin: 0 auto; }
+    .apply-header { margin-bottom: 40px; }
+    .apply-header h1 { font-size: 2rem; font-weight: 600; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .apply-header p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; }
+    .progress-bar { width: 100%; height: 3px; background: var(--bg-card); border-radius: 2px; margin-bottom: 40px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.4s ease; width: 20%; }
+    .progress-text { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; }
+    .step { display: none; animation: fadeIn 0.3s ease; }
+    .step.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .step-question { font-size: 1.1rem; font-weight: 500; color: var(--text-primary); margin-bottom: 16px; line-height: 1.5; }
+    .step textarea { width: 100%; padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--radius); font-family: var(--font-sans); font-size: 0.95rem; color: var(--text-primary); background: var(--bg-primary); transition: border-color var(--transition), box-shadow var(--transition); outline: none; resize: vertical; min-height: 120px; }
+    .step textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .step textarea::placeholder { color: var(--text-muted); }
+    .step-error { color: #dc2626; font-size: 0.85rem; margin-top: 8px; display: none; }
+    .step.error .step-error { display: block; }
+    .step.error textarea { border-color: #dc2626; }
+    .step-actions { display: flex; gap: 12px; margin-top: 24px; }
+    .step-actions .btn { flex: 1; }
+    .btn-back { background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border); }
+    .btn-back:hover { background: var(--bg-card-hover); }
+    .success-state { display: none; text-align: center; padding: 40px 0; animation: fadeIn 0.4s ease; }
+    .success-state.active { display: block; }
+    .success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(34, 197, 94, 0.1); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .success-icon svg { color: #22c55e; }
+    .success-state h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.02em; }
+    .success-state p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
   </style>
 </head>
 <body>
@@ -182,17 +53,14 @@
             <a href="/growth">Growth</a>
             <a href="/conversion">Conversion</a>
             <a href="/operations">Operations</a>
-            <a href="/consulting">Consulting / Strategy</a>
+            <a href="/consulting">Consulting</a>
             <a href="/press">Press</a>
           </div>
         </div>
-        <a href="/press">Press</a>
-        <a href="/#process">Process</a>
-        <a href="https://www.top-ridge.com/contact" class="btn btn-sm">Start a Conversation</a>
+        <a href="/partner-network">Partner Network</a>
+        <a href="/book-call" class="btn btn-sm btn-primary">Book a Call</a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span>
-      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span></button>
     </div>
   </nav>
 
@@ -201,26 +69,19 @@
       <div class="apply-wrapper">
         <div class="apply-header">
           <h1>Apply for Ongoing Advisory</h1>
-          <p>Answer a few quick questions so we can understand where you're at and how we might help.</p>
+          <p>Answer a few quick questions so we can understand where you're at.</p>
         </div>
 
         <div id="formArea">
           <div class="progress-text">Question <span id="currentStep">1</span> of 5</div>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
-          <!-- Step 1 -->
           <div class="step active" data-step="1">
             <div class="step-question">What are you currently working on or building?</div>
             <textarea id="q1" placeholder="Tell us about your business, project, or idea..."></textarea>
             <div class="step-error">Please answer this question before continuing.</div>
-            <div class="step-actions">
-              <button type="button" class="btn btn-primary" onclick="nextStep(1)">Continue →</button>
-            </div>
+            <div class="step-actions"><button type="button" class="btn btn-primary" onclick="nextStep(1)">Continue →</button></div>
           </div>
-
-          <!-- Step 2 -->
           <div class="step" data-step="2">
             <div class="step-question">What are you trying to improve or fix right now?</div>
             <textarea id="q2" placeholder="What's not working the way you want it to?"></textarea>
@@ -230,8 +91,6 @@
               <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continue →</button>
             </div>
           </div>
-
-          <!-- Step 3 -->
           <div class="step" data-step="3">
             <div class="step-question">How are you currently getting clients or traction?</div>
             <textarea id="q3" placeholder="Ads, referrals, organic, social media, cold outreach..."></textarea>
@@ -241,10 +100,8 @@
               <button type="button" class="btn btn-primary" onclick="nextStep(3)">Continue →</button>
             </div>
           </div>
-
-          <!-- Step 4 -->
           <div class="step" data-step="4">
-            <div class="step-question">What's been the most frustrating part of trying to grow this so far?</div>
+            <div class="step-question">What's been the most frustrating part of trying to grow?</div>
             <textarea id="q4" placeholder="Be honest — what's been holding you back?"></textarea>
             <div class="step-error">Please answer this question before continuing.</div>
             <div class="step-actions">
@@ -252,8 +109,6 @@
               <button type="button" class="btn btn-primary" onclick="nextStep(4)">Continue →</button>
             </div>
           </div>
-
-          <!-- Step 5 -->
           <div class="step" data-step="5">
             <div class="step-question">Why are you interested in ongoing advisory?</div>
             <textarea id="q5" placeholder="What are you hoping to get out of it?"></textarea>
@@ -263,31 +118,26 @@
               <button type="button" class="btn btn-primary" onclick="submitForm()">Submit Application →</button>
             </div>
           </div>
-
         </div>
 
-        <!-- Success state -->
         <div class="success-state" id="successState">
           <div class="success-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12l5 5L20 7"/>
-            </svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
           </div>
           <h2>Application received.</h2>
           <p>Next step is to book a quick call. The scheduling window should appear momentarily.</p>
           <p style="margin-top: 12px;"><a href="#" id="calendlyFallback" style="color: var(--accent); text-decoration: underline;">If it doesn't, click here to continue.</a></p>
         </div>
-
       </div>
     </div>
   </section>
 
-    <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/"><img src="../../logo.png" alt="TopRidge" class="logo-img"></a>
-          <p class="footer-tagline">Building revenue systems that scale.</p>
+          <p class="footer-tagline">Revenue systems that scale.</p>
           <p class="footer-email"><a href="mailto:hello@top-ridge.com">hello@top-ridge.com</a></p>
         </div>
         <div class="footer-col">
@@ -296,15 +146,16 @@
             <li><a href="/growth">Growth</a></li>
             <li><a href="/conversion">Conversion</a></li>
             <li><a href="/operations">Operations</a></li>
-            <li><a href="/consulting">Consulting / Strategy</a></li>
+            <li><a href="/consulting">Consulting</a></li>
             <li><a href="/press">Press</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="https://www.top-ridge.com/contact">Contact Us</a></li>
-            <li><a href="https://www.top-ridge.com/book-call">Book a Call</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/book-call">Book a Call</a></li>
+            <li><a href="/partner-network">Partner Network</a></li>
           </ul>
         </div>
       </div>
@@ -329,47 +180,30 @@
 
     function showStep(n) {
       var steps = document.querySelectorAll('.step');
-      for (var i = 0; i < steps.length; i++) {
-        steps[i].classList.remove('active');
-        steps[i].classList.remove('error');
-      }
+      for (var i = 0; i < steps.length; i++) { steps[i].classList.remove('active'); steps[i].classList.remove('error'); }
       var target = document.querySelector('.step[data-step="' + n + '"]');
       if (target) target.classList.add('active');
       updateProgress(n);
-      setTimeout(function() {
-        var ta = target.querySelector('textarea');
-        if (ta) ta.focus();
-      }, 100);
+      setTimeout(function() { var ta = target.querySelector('textarea'); if (ta) ta.focus(); }, 100);
     }
 
     function nextStep(from) {
       var textarea = document.getElementById('q' + from);
-      if (!textarea.value.trim()) {
-        textarea.closest('.step').classList.add('error');
-        return;
-      }
+      if (!textarea.value.trim()) { textarea.closest('.step').classList.add('error'); return; }
       showStep(from + 1);
     }
 
-    function prevStep(from) {
-      showStep(from - 1);
-    }
+    function prevStep(from) { showStep(from - 1); }
 
     function openCalendly() {
       if (typeof Calendly !== 'undefined') {
-        Calendly.initPopupWidget({
-          url: 'https://calendly.com/topridge/advisory-intro-call?hide_event_type_details=1&hide_gdpr_banner=1'
-        });
+        Calendly.initPopupWidget({ url: 'https://calendly.com/topridge/advisory-intro-call?hide_event_type_details=1&hide_gdpr_banner=1' });
       }
     }
 
     function submitForm() {
-      // Validate last question
       var textarea = document.getElementById('q5');
-      if (!textarea.value.trim()) {
-        textarea.closest('.step').classList.add('error');
-        return;
-      }
+      if (!textarea.value.trim()) { textarea.closest('.step').classList.add('error'); return; }
 
       var formData = {
         building: document.getElementById('q1').value.trim(),
@@ -380,25 +214,16 @@
         source: 'TopRidge Advisory Form'
       };
 
-      // Store locally
       try { localStorage.setItem('topridge_advisory', JSON.stringify(formData)); } catch(ex) {}
 
-      // Disable submit button
       var submitBtn = document.querySelector('.step.active .btn-primary');
       if (submitBtn) { submitBtn.textContent = 'Submitting...'; submitBtn.disabled = true; }
 
-      // Send to Google Sheets webhook, then show success
       var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzGTFm4iTHhOUYlE-ySq8QQybsQeYPK2vm-C0hjhA9lDg_cn-87wj4bI-vQ7N_pWJgQQA/exec';
 
-      fetch(WEBHOOK_URL, {
-        method: 'POST',
-        body: JSON.stringify(formData)
-      }).then(function() {
-        showSuccess();
-      }).catch(function(err) {
-        console.warn('Webhook response issue:', err);
-        showSuccess();
-      });
+      fetch(WEBHOOK_URL, { method: 'POST', body: JSON.stringify(formData) })
+        .then(function() { showSuccess(); })
+        .catch(function(err) { console.warn('Webhook response issue:', err); showSuccess(); });
     }
 
     function showSuccess() {
@@ -408,15 +233,9 @@
       setTimeout(openCalendly, 800);
     }
 
-    // Fallback link
     document.addEventListener('DOMContentLoaded', function() {
       var fallback = document.getElementById('calendlyFallback');
-      if (fallback) {
-        fallback.addEventListener('click', function(e) {
-          e.preventDefault();
-          openCalendly();
-        });
-      }
+      if (fallback) { fallback.addEventListener('click', function(e) { e.preventDefault(); openCalendly(); }); }
     });
   </script>
 </body>
