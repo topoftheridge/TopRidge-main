@@ -149,6 +149,13 @@ img { max-width: 100%; display: block; }
   color: var(--text-primary);
 }
 
+.nav-links > a.btn-primary {
+  color: #fff;
+}
+.nav-links > a.btn-primary:hover {
+  color: #fff;
+}
+
 /* Nav Dropdown */
 .nav-dropdown { position: relative; }
 
